@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Karla:wght@200;400&family=Oswald&display=swap');
+
+:root{
+    --principal: rgb(24, 24, 24);
+    --secundario: #c23036;
+    --tercer: #f7f0f0;; 
+    --cuarto: #8a1e21;
+    --quinto: #BF9D73;
+    --letra2: #000000;
+    --letra3: rgba(216, 221, 219, 1);
+    --kanit: 'Kanit', sans-serif;
+    --karla: 'Karla', sans-serif;
+    --oswald: 'Oswald', sans-serif;
+}
+
+h2{
+    color: var(--secundario);
+    font-family: var(--oswald);
+    text-transform: uppercase;
+}
+p{
+    font-family: var(--kanit);
+    font-weight: 300;
+}
+#video-slider{
+    height: 90vh;
+    overflow: hidden;
+}
+#video-slider h2{
+    font-size: 72px;
+    margin: 0px;
+
+}
+#video-slider-frase{
+    position: absolute;
+    bottom: 20%;
+    left: 10vh;
+    height: 0px;
+    z-index: 0;
+}
+#video-slider video{
+    object-fit: cover;
+    width: 100%;
+    z-index: 1;
+    height: 90vh;
+}
+
+
+.contenedor {
+    height: 75px;
+    overflow: hidden;
+    background-color: var(--cuarto);
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.texto-desplazante {
+    white-space: nowrap;
+    position: absolute;
+    animation: desplazar 60s linear infinite;
+    font-size: 55px;
+    font-family: var(--kanit);
+    text-transform: uppercase;
+    color: var(--tercer);
+}
+
+@keyframes desplazar {
+    0% {
+        left: 2%; 
+    }
+    100% {
+        left: -400%; 
+    }
+}
+
+.sobre-nosotros{
+    height: auto;
+    background-color: var(--principal);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 50px 0px;
+}
+#sobre-nosotros-img{
+    background-image: url(../img/pexels-adrian-dorobantu-2089717.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    width: 35%;
+    border-radius: 0px 10px 10px 0px;
+}
+.sobre-nosotros-contenido{
+    width: 64%;
+    padding: 32px;
+}
+.sobre-nosotros-contenido h2{
+    font-size: 58px;
+    margin-top: 0px;
+}
+.sobre-nosotros-contenido p{
+    font-size: 20px;
+    color: var(--tercer);
+    padding-right: 24px;
+}

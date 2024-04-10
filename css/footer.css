@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Karla:wght@200;400&family=Oswald&display=swap');
+
+:root{
+    --principal: rgb(24, 24, 24);
+    --secundario: #c23036;
+    --tercer: #e5d4d4;; 
+    --cuarto: #8a1e21;
+    --quinto: #BF9D73;
+    --letra2: #000000;
+    --letra3: rgba(216, 221, 219, 1);
+    --kanit: 'Kanit', sans-serif;
+    --karla: 'Karla', sans-serif;
+    --oswald: 'Oswald', sans-serif;
+}
+
+footer{
+    height: auto;
+}
+.container-footer{
+    background-color: var(--cuarto);
+    height: 275px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container-grid {
+    display: grid; 
+    grid-template-columns: 2fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: ". . ."; 
+    color: var(--tercer);
+    justify-items: center;
+}
+
+.container-grid-tittle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+.container-grid-tittle h2{
+    color: var(--tercer);
+    font-size: 72px;
+}
+
+.container-grid-content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-grid-content h3{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: var(--kanit);
+    margin: 2px;
+}
+.container-grid-content a{
+    font-family: var(--kanit);
+    font-weight: 300;
+    color: var(--tercer);
+    text-decoration: none;
+}
+
+#copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#copyright p{
+    color: var(--tercer);
+}
