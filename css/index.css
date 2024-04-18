@@ -124,6 +124,7 @@ p{
     margin: 0px;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     padding: 5%;
 }
 .reserva-info h2{
@@ -133,6 +134,20 @@ p{
 .reserva-info p{
     font-size: 18px;
 }
+calendar-range{
+    background-color: var(--letra3);
+    padding: 16px;
+    border-radius: 10px;
+    font-family: var(--oswald);
+    text-transform: uppercase;
+}
+calendar-month{
+    --color-accent: var(--secundario);
+    --color-text-on-accent: var(--letra2);
+}
+calendar-month::part(range-start range-end) {
+    border-radius: 20px;
+  }
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 

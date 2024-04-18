@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/despliegueMenu.js" defer></script>
     <script src="js/sliderFrases.js" defer></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
     <title>Rhapsody Burgers</title>
 </head>
 <body>
@@ -109,7 +110,9 @@
                 <p>Garantizamos momentos deliciosos que querrás repetir una y otra vez.</p>
             </div>
             <div class="reserva-calendario">
-                
+                <calendar-range months="1">
+                    <calendar-month></calendar-month>
+                </calendar-range>
             </div>
         </div>
     </main>
