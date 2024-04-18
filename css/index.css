@@ -21,6 +21,7 @@ h2{
 p{
     font-family: var(--kanit);
     font-weight: 300;
+    color: var(--letra3);
 }
 
 #video-slider{
@@ -80,7 +81,7 @@ p{
         left: -400%; 
     }
 }
-
+/* -- SOBRE NOSOTROS -- */
 .sobre-nosotros{
     height: auto;
     background-color: var(--principal);
@@ -111,7 +112,27 @@ p{
     color: var(--tercer);
     padding-right: 24px;
 }
-
+/* -- CARTA -- */
+.carta{
+    height: 200px;
+    background-color: var(--secundario);
+}
+/* -- RESERVA -- */
+.reserva{
+    background-color: var(--principal);
+    height: auto;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+}
+.reserva-info h2{
+    font-size: 58px;
+    margin: 0px;
+}
+.reserva-info p{
+    font-size: 18px;
+}
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 
