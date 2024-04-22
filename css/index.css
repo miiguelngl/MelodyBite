@@ -117,9 +117,40 @@ p{
     height: 200px;
     background-color: var(--secundario);
 }
+/* -- LOCAL Y RESERVA -- */
+#info-local-reserva{
+    background-color: var(--principal);
+    overflow: hidden;
+}
+/* -- LOCAL -- */
+.local{
+    padding: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 550px;
+    
+}
+#local-img{
+    position: relative;
+    left: 15%;
+    bottom: 300px;
+}
+#local-img img{
+    border-radius: 50% 0% 0% 40%;
+}
+.local-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5%;
+}
+.local-info p{
+    font-size: 22px;
+    font-family: var(--kanit);
+}
 /* -- RESERVA -- */
 .reserva{
-    background-color: var(--principal);
     height: auto;
     margin: 0px;
     display: flex;
@@ -127,7 +158,7 @@ p{
     justify-content: space-around;
     padding: 5%;
 }
-.reserva-info h2{
+.reserva-info h2, .local-info h2{
     font-size: 58px;
     margin: 0px;
 }

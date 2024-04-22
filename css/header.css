@@ -40,23 +40,7 @@ header img{
 }
 #titulo{
     display: flex;
-    color: var(--secundario);
-    text-transform: uppercase;
-    font-size: 18px;
-    font-family: var(--oswald);
     text-align: center;
-}
-#titulo hr{
-    margin: 0px;
-}
-#titulo h1{
-    margin: 0px;
-    margin-top: 12px;
-}
-#titulo h1 span{
-    font-size: 26px;
-    position: relative;
-    bottom: 8px;
 }
 #header-menu {
     height: auto;

@@ -44,23 +44,7 @@ footer{
 
 .container-grid-tittle #titulo{
     display: flex;
-    color: var(--tercer);
-    text-transform: uppercase;
-    font-size: 32px;
-    font-family: var(--oswald);
     text-align: center;
-}
-.container-grid-tittle #titulo hr{
-    margin: 0px;
-}
-.container-grid-tittle #titulo h2{
-    margin: 0px;
-    margin-top: 12px;
-}
-.container-grid-tittle #titulo h2 span{
-    font-size: 28px;
-    position: relative;
-    bottom: 12px;
 }
 
 .container-grid-content{
