@@ -128,57 +128,35 @@ p{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     height: 550px;
-    
+    width: 100%;
 }
 #local-img{
     position: relative;
-    left: 15%;
-    bottom: 300px;
+    /* left: 15%; */
+    /* bottom: 300px; */
+    width: 40%;
 }
 #local-img img{
     border-radius: 50% 0% 0% 40%;
+    
 }
 .local-info{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 5%;
+    /* padding-left: 5%; */
+    width: 40%;
+}
+.local-info h2{
+    font-size: 58px;
+    margin: 0px;
 }
 .local-info p{
     font-size: 22px;
     font-family: var(--kanit);
 }
-/* -- RESERVA -- */
-.reserva{
-    height: auto;
-    margin: 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 5%;
-}
-.reserva-info h2, .local-info h2{
-    font-size: 58px;
-    margin: 0px;
-}
-.reserva-info p{
-    font-size: 20px;
-}
-calendar-range{
-    background-color: var(--letra3);
-    padding: 16px;
-    border-radius: 10px;
-    font-family: var(--oswald);
-    text-transform: uppercase;
-}
-calendar-month{
-    --color-accent: var(--secundario);
-    --color-text-on-accent: var(--letra2);
-}
-calendar-month::part(range-start range-end) {
-    border-radius: 20px;
-  }
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 
