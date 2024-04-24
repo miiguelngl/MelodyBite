@@ -26,6 +26,7 @@ header{
 }
 header img{
     height: 95px;
+    margin-right: 72px;
 }
 #header-pedido{
     display: none;
@@ -34,13 +35,6 @@ header img{
     border: 0px;
     background-color: transparent;
     height: 40px;
-}
-.header-boton img{
-    height: 40px;
-}
-#titulo{
-    display: flex;
-    text-align: center;
 }
 #header-menu {
     height: auto;
@@ -55,8 +49,8 @@ header img{
 }
 
 #header-menu.active {
-    left: 0%; /* Mostrar el menú */
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2); /* Sombra a la izquierda */
+    left: 0%;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 #boton-menu-desplegable{
@@ -97,6 +91,7 @@ nav{
 .social-media p{
     color: var(--tercer);
     margin-left: 32px;
+    font-family: var(--kanit);
 }
 
 /* -- RESPONSIVE -- */
@@ -104,9 +99,6 @@ nav{
 
 }
 @media only screen and (min-width: 601px) and (max-width: 960px){
-    #titulo{
-        font-size: 24px;
-    }
     #header-pedido{
         background-color: var(--secundario);
         padding: 5px 10px;
@@ -120,12 +112,12 @@ nav{
         letter-spacing: 1px;
         display: block;
     }
+    header img{
+        margin-right: 72px;
+    }
 }
 
 @media only screen and (min-width: 960px){
-    #titulo{
-        font-size: 24px;
-    }
     #header-pedido{
         background-color: var(--cuarto);
         padding: 5px 10px;
@@ -146,8 +138,8 @@ nav{
     #header-menu.active {
         left: 39%;
     }
-
-    #titulo h1 span{
-        bottom: 16px;
+    header img{
+        margin-right: 72px;
     }
+
 }
