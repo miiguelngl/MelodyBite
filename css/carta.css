@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Karla:wght@200;400&family=Oswald&display=swap');
+
+:root{
+    --principal: #181818;
+    --secundario:#FEBD01;
+    --tercer: #fff8ec; 
+    --cuarto:#bb8d01;
+    --quinto: #BF9D73;
+    --letra2: #000000;
+    --letra3: #d8dddb;
+    --kanit: 'Kanit', sans-serif;
+    --karla: 'Karla', sans-serif;
+    --oswald: 'Oswald', sans-serif;
+}
+
+body{
+    background-color: var(--secundario);
+}
+
+.carta{
+    padding: 5%;
+}
+.carta-fila{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2%;
+    margin-bottom: 0px;
+}
+.carta-case{
+    height: auto;
+    min-height: 575px;
+    width: 350px;
+    background-color: var(--principal);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+.carta-case-2{
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.carta-case-2 h2{
+    margin: 0px;
+    margin-top: 12px;
+    color: var(--secundario);
+    font-family: var(--oswald);
+    text-transform: uppercase;
+    font-size: 32px;
+}
+.carta-case-2 img{
+    width: 100%;
+    max-height: 280px;
+}
+.carta-case-2 p{
+    color: var(--tercer);
+    font-family: var(--kanit);
+    text-align: center;
+}
+.carta-case-2 button{
+    background-color: var(--cuarto);
+    color: var(--tercer);
+    border: 0px;
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-family: var(--oswald);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* -- RESPONSIVE -- */
+@media only screen and (max-width: 600px){
+
+}
+@media only screen and (min-width: 601px) and (max-width: 960px){
+
+}
+
+@media only screen and (min-width: 960px){
+    .carta-fila{
+        flex-direction: row;
+    }
+    .carta-case{
+        width: 400px;
+        margin-bottom: 12px;
+    }
+}
