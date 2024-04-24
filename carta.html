@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/carta.css">
     <script src="js/despliegueMenu.js" defer></script>
+    <script src="js/anyadirProductos.js" defer></script>
     <title>Rhapsody's Burgers</title>
 </head>
 <body>
@@ -76,15 +77,15 @@
                         <img src="img/Hamburguesas/Burger1.png" alt="">
                         <h2>Funky Burger</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim corporis voluptatibus, voluptatem natus illo ipsam ipsum eos officia consequuntur. Non ducimus exercitationem libero reiciendis cupiditate, dolores amet delectus? Repellat, debitis!</p>
-                        <button>Añadir</button>
+                        <button class="añadir" name="Funky Burger">Añadir</button>
                     </div>
                 </div>
                 <div class="carta-case">
                     <div class="carta-case-2">
                         <img src="img/Hamburguesas/Burger2.png" alt="">
-                        <h2>Rock Burger</h2>
+                        <h2>La Rockera</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim corporis voluptatibus, voluptatem natus illo ipsam ipsum eos officia consequuntur. Non ducimus exercitationem libero reiciendis cupiditate, dolores amet delectus? Repellat, debitis!</p>
-                        <button>Añadir</button>
+                        <button class="añadir" name="La Rockera">Añadir</button>
                     </div>
                 </div>
                 <div class="carta-case">
@@ -92,7 +93,7 @@
                         <img src="img/Hamburguesas/Burger3.png" alt="">
                         <h2>Pop Burger</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim corporis voluptatibus, voluptatem natus illo ipsam ipsum eos officia consequuntur. Non ducimus exercitationem libero reiciendis cupiditate, dolores amet delectus? Repellat, debitis!</p>
-                        <button>Añadir</button>
+                        <button class="añadir" name="Pop Burger">Añadir</button>
                     </div>
                 </div>
             </div>
@@ -100,17 +101,17 @@
                 <div class="carta-case">
                     <div class="carta-case-2">
                         <img src="img/Hamburguesas/Burger4.png" alt="">
-                        <h2>Hip-Hop Burger</h2>
+                        <h2>Hip-Hop Style</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim corporis voluptatibus, voluptatem natus illo ipsam ipsum eos officia consequuntur. Non ducimus exercitationem libero reiciendis cupiditate, dolores amet delectus? Repellat, debitis!</p>
-                        <button>Añadir</button>
+                        <button class="añadir" name="Hip-Hop Style">Añadir</button>
                     </div>
                 </div>
                 <div class="carta-case">
                     <div class="carta-case-2">
                         <img src="img/Hamburguesas/Burger5.png" alt="">
-                        <h2>Classic Burger</h2>
+                        <h2>The Classical</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim corporis voluptatibus, voluptatem natus illo ipsam ipsum eos officia consequuntur. Non ducimus exercitationem libero reiciendis cupiditate, dolores amet delectus? Repellat, debitis!</p>
-                        <button>Añadir</button>
+                        <button class="añadir" name="The Classical">Añadir</button>
                     </div>
                 </div>
                 <div class="carta-case">
@@ -118,10 +119,17 @@
                         <img src="img/Hamburguesas/Burger6.png" alt="">
                         <h2>Soul Burger</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim corporis voluptatibus, voluptatem natus illo ipsam ipsum eos officia consequuntur. Non ducimus exercitationem libero reiciendis cupiditate, dolores amet delectus? Repellat, debitis!</p>
-                        <button>Añadir</button>
+                        <button class="añadir" name="Soul Burger">Añadir</button>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-productos"></ul>
+            <p id="total">Total: $0.00</p>
+            <button id="vaciarCarrito">Vaciar Carrito</button>
         </div>
     </main>
     <footer>
