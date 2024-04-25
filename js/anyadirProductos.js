@@ -28,11 +28,15 @@ function actualizarCarrito() {
 
     carrito.forEach(producto => {
         let item = document.createElement('li');
+        let x = document.createElement("span");
+        x.innerText = "X";
+        x.id = 'eliminar';
         item.textContent = producto;
+        item.appendChild(x);
         listaProductos.appendChild(item);
     });
 
-    document.getElementById('total').textContent = `Total: $${total.toFixed(2)}`;
+    document.getElementById('total').textContent = `Total: ${total.toFixed(2)}€`;
 }
 
 
@@ -56,6 +60,9 @@ function vaciarCarrito() {
 // Captura el clic en el botón "Vaciar Carrito" y llama a la función para vaciarlo
 document.getElementById('vaciarCarrito').addEventListener('click', vaciarCarrito);
 
-// window.onload(new function() {
-
-// })
+// window.onload(function() {
+//     var xs = document.querySelectorAll("#eliminar");
+//     xs.forEach(x => {
+//         x.addEventListener('click', () => localStorage.removeItem('carrito'));
+//     });
+// });
