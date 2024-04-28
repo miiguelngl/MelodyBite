@@ -152,7 +152,16 @@ nav{
 #eliminar{
     float: right;
 }
-
+#vaciarCarrito{
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 0px;
+    background-color: var(--secundario);
+    font-family: var(--oswald);
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 12px;
+}
 /* -- BOTÓN PEDIR YA -- */
 .pedir-ya {
     display: none;
@@ -163,7 +172,7 @@ nav{
       padding: 10px 25px;
       text-decoration: none;
       font-family: var(--oswald);
-      font-size: 30px;
+      font-size: 22px;
       font-weight: 700;
       color: white;
       background: #bb8d01;
