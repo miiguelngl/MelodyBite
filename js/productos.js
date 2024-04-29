@@ -99,7 +99,6 @@ document.getElementById('vaciarCarrito').addEventListener('click', vaciarCarrito
 //VENTANA EMERGENTE
 document.addEventListener('DOMContentLoaded', function() {
     const lupa = document.querySelectorAll('#lupa');
-    const botonCerrar = document.querySelector('.cerrar');
 
     lupa.forEach(function(lupaItem) {
         lupaItem.addEventListener('click', function() {
@@ -108,16 +107,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const imagenSrc = 'img/Hamburguesas/' + nombre + '.png';
 
             const ventanaEmergente = document.createElement('div');
-            ventanaEmergente.classList.add('ventana-emergente');
+            ventanaEmergente.classList.add('ventana-burger');
 
             const contenidoVentana = document.createElement('div');
-            contenidoVentana.classList.add('contenido-ventana');
+            contenidoVentana.classList.add('contenido-burger');
+
+            const contenidoPrincipalVentana = document.createElement('div');
+            contenidoPrincipalVentana.classList.add('contenido-principal-burger');
 
             const botonCerrarVentana = document.createElement('span');
             botonCerrarVentana.classList.add('cerrar');
             botonCerrarVentana.innerHTML = `
-                <svg fill="#000000" height="35px" width="35px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve">
-                    <path fill="#e5d4d4" d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+                <svg fill="#FEBD01" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve">
+                    <path fill="#FEBD01" d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
                         c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
                         c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
                         c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
@@ -128,7 +130,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const imagenHamburguesa = document.createElement('img');
             imagenHamburguesa.src = imagenSrc;
-            imagenHamburguesa.alt = 'Imagen de la hamburguesa';
+            imagenHamburguesa.alt = 'Imagen de la hamburguesa ' + nombre;
+
+            const contenidoPrincipalVentanaText = document.createElement('div');
+            contenidoPrincipalVentanaText.classList.add('contenido-principal-burger-text');
 
             const nombreHamburguesa = document.createElement('h2');
             nombreHamburguesa.textContent = nombre;
@@ -136,24 +141,26 @@ document.addEventListener('DOMContentLoaded', function() {
             const descripcionHamburguesa = document.createElement('p');
             descripcionHamburguesa.textContent = descripcion;
 
-            contenidoVentana.appendChild(botonCerrarVentana);
-            contenidoVentana.appendChild(imagenHamburguesa);
-            contenidoVentana.appendChild(nombreHamburguesa);
-            contenidoVentana.appendChild(descripcionHamburguesa);
+            contenidoPrincipalVentanaText.appendChild(botonCerrarVentana);
+            contenidoPrincipalVentana.appendChild(imagenHamburguesa);
+            contenidoPrincipalVentanaText.appendChild(nombreHamburguesa);
+            contenidoPrincipalVentanaText.appendChild(descripcionHamburguesa);
+            contenidoPrincipalVentana.appendChild(contenidoPrincipalVentanaText);
+            contenidoVentana.appendChild(contenidoPrincipalVentana);
+
+            const separador = document.createElement('hr');
+            contenidoVentana.appendChild(separador);
+
             ventanaEmergente.appendChild(contenidoVentana);
             document.body.appendChild(ventanaEmergente);
 
-            ventanaEmergente.style.display = 'block';
+            ventanaEmergente.style.display = 'flex';
+            ventanaEmergente.style.alignItems = 'center';
+            ventanaEmergente.style.justifyContent = 'center';
 
             botonCerrarVentana.addEventListener('click', function() {
-                ventanaEmergente.style.display = 'none';
-                ventanaEmergente.innerHTML = '';
+                ventanaEmergente.remove();
             });
         });
-    });
-
-    botonCerrar.addEventListener('click', function() {
-        const ventanaEmergente = document.querySelector('.ventana-emergente');
-        ventanaEmergente.style.display = 'none';
     });
 });

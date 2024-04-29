@@ -89,17 +89,17 @@ body{
 #lupa {
     position: absolute;
     opacity: 0;
-    transition: opacity 0.3s ease; /* Duración de la transición y efecto de transición */
+    transition: opacity 0.3s ease;
     cursor: pointer;
     z-index: 3;
 }
 
 .contenedor-img:hover img {
-    opacity: 0; /* Cambia la opacidad al hacer hover */
+    opacity: 0;
 }
 
 .contenedor-img:hover #lupa {
-    opacity: 1; /* Muestra la lupa cuando la imagen tiene opacidad 0 */
+    opacity: 1;
     stroke: var(--secundario);
 }
 
@@ -129,7 +129,7 @@ body{
 
 /* -- VENTANA EMERGENTE -- */
 
-.ventana-emergente {
+.ventana-burger {
     display: none;
     position: fixed;
     z-index: 999;
@@ -141,23 +141,56 @@ body{
     background-color: #644b0050;
 }
 
-.contenido-ventana {
+.contenido-burger{
     background-color: var(--principal);
     margin: auto;
-    margin-top: 10%;
     padding: 20px;
     border-radius: 25px;
-    width: 80%;
+    width: 70%;
     color: var(--tercer);
 }
 
-.cerrar {
+.contenido-principal-burger{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenido-principal-burger img{
+    width: 100%;
+    max-width: 350px;
+}
+
+.contenido-principal-burger-text{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 50%;
+}
+.contenido-principal-burger-text h2{
+    color: var(--secundario);
+    font-family: var(--oswald);
+    text-transform: uppercase;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+.contenido-principal-burger-text p{
+    font-family: var(--kanit);
+}
+
+.cerrar svg{
     float: right;
+    top: 0;
+    
 }
 
 .cerrar:hover, .cerrar:focus {
     fill: var(--secundario);
     cursor: pointer;
+}
+
+.ventana-burger hr{
+    height: 4px;
+    background-color: var(--secundario);
 }
 
 /* -- RESPONSIVE -- */
