@@ -90,6 +90,8 @@ body{
     position: absolute;
     opacity: 0;
     transition: opacity 0.3s ease; /* Duración de la transición y efecto de transición */
+    cursor: pointer;
+    z-index: 3;
 }
 
 .contenedor-img:hover img {
@@ -125,6 +127,38 @@ body{
 }
 
 
+/* -- VENTANA EMERGENTE -- */
+
+.ventana-emergente {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #644b0050;
+}
+
+.contenido-ventana {
+    background-color: var(--principal);
+    margin: auto;
+    margin-top: 10%;
+    padding: 20px;
+    border-radius: 25px;
+    width: 80%;
+    color: var(--tercer);
+}
+
+.cerrar {
+    float: right;
+}
+
+.cerrar:hover, .cerrar:focus {
+    fill: var(--secundario);
+    cursor: pointer;
+}
 
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
