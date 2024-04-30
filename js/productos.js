@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const descripcionHamburguesa = document.createElement('p');
             descripcionHamburguesa.textContent = descripcion;
 
-            contenidoPrincipalVentanaText.appendChild(botonCerrarVentana);
+            contenidoPrincipalVentana.appendChild(botonCerrarVentana);
             contenidoPrincipalVentana.appendChild(imagenHamburguesa);
             contenidoPrincipalVentanaText.appendChild(nombreHamburguesa);
             contenidoPrincipalVentanaText.appendChild(descripcionHamburguesa);

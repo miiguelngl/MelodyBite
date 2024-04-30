@@ -113,22 +113,39 @@ body{
     transition: transform 0.3s ease;
 }
 
-.carta-case-3 button{
+.carta-case-3 #comprar, .carta-case-3 #precio{
     background-color: var(--cuarto);
     color: var(--tercer);
     border: 0px;
-    border-radius: 20px;
-    padding: 10px 30px;
     font-family: var(--oswald);
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
-    transition: letter-spacing 0.3s ease;
+    
 }
 
-.carta-case-3 button:hover{
+.carta-case-3 #comprar{
+    padding: 10px 30px;
+    border-radius: 20px;
+    transition: letter-spacing 0.3s ease;
+    z-index: 2;
+}
+
+.carta-case-3 #comprar:hover{
     letter-spacing: 4px;
+}
+
+.carta-case-3 #precio{
+    border-radius: 0px 0px 20px 20px;
+    padding: 8px 20px;
+    margin-top: -40px;
+    z-index: 1;
+    transition: margin-top 0.3s ease;
+}
+
+.carta-case-3 #comprar:hover + #precio, .carta-case-3 #precio:hover{
+    margin-top: -8px;
 }
 
 
@@ -182,10 +199,9 @@ body{
     font-family: var(--kanit);
 }
 
-.cerrar svg{
-    float: right;
-    top: 0;
-    
+.cerrar{
+    position: absolute;
+    right: 15%;
 }
 
 .cerrar:hover, .cerrar:focus {
