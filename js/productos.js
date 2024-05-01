@@ -95,7 +95,6 @@ function vaciarCarrito() {
 document.getElementById('vaciarCarrito').addEventListener('click', vaciarCarrito);
 
 
-
 //VENTANA EMERGENTE
 document.addEventListener('DOMContentLoaded', function() {
     const lupa = document.querySelectorAll('#lupa');
@@ -104,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lupaItem.addEventListener('click', function() {
             const nombre = lupaItem.dataset.nombre;
             const descripcion = lupaItem.dataset.descripcion;
+            const precio = lupaItem.dataset.precio;
             const imagenSrc = 'img/Hamburguesas/' + nombre + '.png';
 
             const ventanaEmergente = document.createElement('div');
@@ -141,10 +141,23 @@ document.addEventListener('DOMContentLoaded', function() {
             const descripcionHamburguesa = document.createElement('p');
             descripcionHamburguesa.textContent = descripcion;
 
+            const precioHamburguesa = document.createElement('p');
+            precioHamburguesa.textContent = 'Precio: ' + precio + '€';
+            precioHamburguesa.id = 'contenido-precio';
+
+            const botonHamburguesa = document.createElement('button');
+            botonHamburguesa.textContent = 'La quiero';
+            botonHamburguesa.classList.add('añadir');
+            botonHamburguesa.id = 'comprar';
+            botonHamburguesa.setAttribute('name', nombre);
+            botonHamburguesa.addEventListener('click', () => añadirAlCarrito(botonHamburguesa.getAttribute('name')));
+
             contenidoPrincipalVentana.appendChild(botonCerrarVentana);
             contenidoPrincipalVentana.appendChild(imagenHamburguesa);
             contenidoPrincipalVentanaText.appendChild(nombreHamburguesa);
             contenidoPrincipalVentanaText.appendChild(descripcionHamburguesa);
+            contenidoPrincipalVentanaText.appendChild(precioHamburguesa);
+            contenidoPrincipalVentanaText.appendChild(botonHamburguesa);
             contenidoPrincipalVentana.appendChild(contenidoPrincipalVentanaText);
             contenidoVentana.appendChild(contenidoPrincipalVentana);
 
