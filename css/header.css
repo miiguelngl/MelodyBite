@@ -41,6 +41,11 @@ header img{
     flex-direction: row;
     align-items: center;
 }
+/* -- USUARIO -- */
+#registroButton{
+    background-color: transparent;
+    border: 0;
+}
 /* -- HEADER MENÚ -- */
 #header-menu {
     height: auto;
