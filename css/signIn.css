@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Karla:wght@200;400&family=Oswald&display=swap');
+
+:root{
+    --principal: #181818;
+    --secundario:#FEBD01;
+    --tercer: #fff8ec; 
+    --cuarto:#bb8d01;
+    --quinto: #BF9D73;
+    --letra2: #000000;
+    --letra3: #d8dddb;
+    --kanit: 'Kanit', sans-serif;
+    --karla: 'Karla', sans-serif;
+    --oswald: 'Oswald', sans-serif;
+}
+
+body{
+    background-color: var(--secundario);
+    font-family: var(--kanit);
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#formulario{
+    background-color: var(--principal);
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 8px var(--secundario);
+}
+
+h2{
+    color: var(--secundario);
+}
+
+.datosLogIn{
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+.datosLogIn input{
+    border: 0px;
+    border-bottom: 2px solid var(--secundario);
+    background-color: var(--principal);
+    width: 100%;
+    color: var(--secundario);
+}
+label i{
+    margin-right: 4px;
+    margin-top: 4px;
+}
+
+#remember{
+    margin-top: 12px;
+    color: var(--secundario);
+}
+
+.form-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.form-button input{
+    background-color: var(--secundario);
+    border: 2px solid var(--secundario);
+    border-radius: 25px;
+    padding: 8px;
+    font-size: 12px;
+    margin: 2px; 
+    color: var(--principal);
+    text-decoration: none;
+    font-family: var(--oswald);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+a{
+    text-decoration: none;
+    color: var(--secundario);
+}
+
+#terminos{
+    font-size: 10px;
+}
+
+#formularioEnlaces{
+    display: flex;
+    flex-direction: column;
+}

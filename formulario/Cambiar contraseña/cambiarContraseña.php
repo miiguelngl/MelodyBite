@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/signIn.css">
     <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
     <script defer src="../../js/validacionContraseña.js"></script>
-    <title>Opal</title>
+    <title>Rhapsody's Burgers</title>
 </head>
 <style>
     #id{
