@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
             listaIngredientesTittle.textContent = 'Ingredientes';
             contenidoVentana.appendChild(listaIngredientesTittle);
             
-            const ingredientes = lupaItem.previousSibling.previousSibling.dataset.ingredientes;
+            const ingredientes = lupaItem.previousElementSibling.dataset.ingredientes;
             const ingredientesArray = ingredientes.split(', ');
             const listaUL = document.createElement('ul');
             ingredientesArray.forEach(ingrediente => {

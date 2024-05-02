@@ -19,6 +19,9 @@ body{
 
 .carta{
     padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .carta-fila{
     display: flex;
@@ -241,6 +244,8 @@ body{
 @media only screen and (min-width: 960px){
     .carta-fila{
         flex-direction: row;
+        width: 1400px;
+        max-width: 1400px;
     }
     .carta-case{
         width: 350px;

@@ -1,6 +1,6 @@
 <header>
         <div class="pedir-ya">
-            <a class="cta" href="carta.html">
+            <a class="cta" href="carta.php">
               <span>PEDIR YA</span>
               <span>
                 <svg width="25px" height="25px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -14,7 +14,7 @@
             </a>
         </div>
         <div id="titulo">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="img/Logo Rhapsody Secundario.svg" alt="">
             </a>
         </div>
@@ -83,8 +83,8 @@
                 </div>
                 <nav>
                     <ul class="menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="carta.html">Carta</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="carta.php">Carta</a></li>
                         <li><a href="">Historia</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
