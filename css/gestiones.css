@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Karla:wght@200;400&family=Oswald&display=swap');
+
+:root{
+    --principal: #181818;
+    --secundario:#FEBD01;
+    --tercer: #fff8ec; 
+    --cuarto:#bb8d01;
+    --quinto: #BF9D73;
+    --letra2: #000000;
+    --letra3: #d8dddb;
+    --kanit: 'Kanit', sans-serif;
+    --karla: 'Karla', sans-serif;
+    --oswald: 'Oswald', sans-serif;
+}
+
+table {
+    text-align: center;
+    width: 100vw;
+}
+tr th{
+    font-family: var(--oswald);
+}
+tr th:first-child {
+    text-align: center;
+}
+tr td:first-child {
+    text-align: center;
+}
+tr:nth-child(odd) {
+    background-color: var(--secundario);
+}
+tr:nth-child(even) {
+    background-color: #ffe598;
+}
+
+button:nth-child(odd) { 
+    margin-right: 20px;
+}
+tr{
+    width: 100vw;
+    overflow: hidden;
+}
+
+td{
+    width: 20vw;
+    font-family: var(--kanit);
+}
+h4{
+    text-align: center;
+    
+    font-weight: 700;
+    font-size: 50px;
+}
+table{
+    margin-right: 10px;
+}
+.estado{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

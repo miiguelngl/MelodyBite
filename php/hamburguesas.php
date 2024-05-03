@@ -33,7 +33,6 @@
                 echo '
                 <div class="carta-case-3">
                     <button class="añadir" id="comprar" name="' . $hamburguesa["Nombre"] . '" data-precio="' . $hamburguesa["Precio"] . '">La quiero</button>
-                    <button class="añadir" id="precio" name="' . $hamburguesa["Nombre"] . '" data-precio="' . $hamburguesa["Precio"] . '">' . $hamburguesa["Precio"] . '€</button>
                 </div>
                 ';
             }
