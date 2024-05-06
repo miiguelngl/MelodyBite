@@ -41,7 +41,7 @@
         </div>
         <div class="carta">
             <h2>La melodía en nuestras hamburguesas</h2>
-            <a href="carta.html">Ver carta</a>
+            <a href="carta.php">Ver carta</a>
         </div>
         <div id="info-local-reserva">
             <div class="local">

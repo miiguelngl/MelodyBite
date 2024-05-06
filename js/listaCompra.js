@@ -17,9 +17,17 @@ function actualizarLista() {
 
     let carrito = obtenerCarritoLocalStorage();
 
-    let tituloPago = document.createElement("h2");
-    tituloPago.innerText = 'A un paso de tu bocado';
-    lista.appendChild(tituloPago);
+    let urlActual = window.location.href;
+    if (urlActual.includes("compra")) {
+        let tituloPago = document.createElement("h2");
+        tituloPago.innerText = 'A un paso de tu bocado';
+        lista.appendChild(tituloPago);
+    }else{
+        let tituloPago = document.createElement("h2");
+        tituloPago.innerText = 'Procesando tu último bocado';
+        lista.appendChild(tituloPago);
+    }
+    
 
     carrito.forEach(burger => {
         let divGenerico= document.createElement("div");
@@ -49,38 +57,40 @@ function actualizarLista() {
         });
         divDer.appendChild(listaUL);
 
-        let extra = document.createElement("p");
-        extra.innerText = 'Añadir ingrediente';
-        extra.id = 'extra';
-        divDer.appendChild(extra);
-
+        if (urlActual.includes("compra")) {
+            let extra = document.createElement("p");
+            extra.innerText = 'Añadir ingrediente';
+            extra.id = 'extra';
+            divDer.appendChild(extra);
+        }
 
         divGenerico.appendChild(divIzq);
         divGenerico.appendChild(divDer);
         lista.appendChild(divGenerico);
     });
 
-    let hr = document.createElement('hr');
-    lista.appendChild(hr);
+    
+    if (urlActual.includes("compra")) {
+        let hr = document.createElement('hr');
+        lista.appendChild(hr);
 
-    let button = document.createElement('button');
-    button.textContent = 'FINALIZAR COMPRAR';
-    button.classList.add('finalizarCompra');
-    button.id = 'finCompra';
-    // botonHamburguesa.dataset.precio = precio;
-    // botonHamburguesa.setAttribute('name', nombre);
-    // botonHamburguesa.addEventListener('click', () => añadirAlCarrito(botonHamburguesa.getAttribute('name'), botonHamburguesa.dataset.precio));
-    lista.appendChild(button);
+        let button = document.createElement('button');
+        let a = document.createElement('a');
+        a.textContent = 'FINALIZAR COMPRAR';
+        a.href = 'checkOut.php';
+        button.appendChild(a);
+        button.classList.add('finalizarCompra');
+        button.id = 'finCompra';
+        lista.appendChild(button);
 
-    let divButton= document.createElement("div");
-    divButton.classList.add("divButton");
-    divButton.appendChild(button);
-    lista.appendChild(divButton);
-
+        let divButton= document.createElement("div");
+        divButton.classList.add("divButton");
+        divButton.appendChild(button);
+        lista.appendChild(divButton);
+    }
 }
 
 //MOSTRAR CARRITO
 document.addEventListener('DOMContentLoaded', function() {
     actualizarLista();
-
 });
