@@ -11,12 +11,13 @@ function guardarCarritoLocalStorage(carrito) {
 }
 
 // Función para añadir hamburguesa al carrito
-function añadirAlCarrito(nombreBurger, precioBurger) {
+function añadirAlCarrito(nombreBurger, precioBurger, ingredientesBurger) {
     let carrito = obtenerCarritoLocalStorage();
     let burger = {
         id: idBurger,
         nombre: nombreBurger,
-        precio: precioBurger
+        precio: precioBurger,
+        ingredientes: ingredientesBurger
     };
     idBurger++;
     carrito.push(burger); // Añadir nombre de la hamburguesa al carrito
@@ -79,9 +80,8 @@ function actualizarCarrito() {
 var buttons = document.querySelectorAll(".añadir");
 buttons.forEach(button => {
     // Agrega eventos de clic para los demás botones "Añadir" aquí...
-    button.addEventListener('click', () => añadirAlCarrito(button.getAttribute('name'), button.dataset.precio));
+    button.addEventListener('click', () => añadirAlCarrito(button.getAttribute('name'), button.dataset.precio, button.parentElement.parentElement.firstElementChild.firstChild.firstChild.dataset.ingredientes));
 });
-
 
 // Al cargar la página, actualizar el carrito
 window.addEventListener('load', actualizarCarrito);
@@ -94,7 +94,9 @@ function vaciarCarrito() {
 }
 
 // Captura el clic en el botón "Vaciar Carrito" y llama a la función para vaciarlo
-document.getElementById('vaciarCarrito').addEventListener('click', vaciarCarrito);
+if(document.getElementById('vaciarCarrito')){
+    document.getElementById('vaciarCarrito').addEventListener('click', vaciarCarrito);
+}
 
 
 //VENTANA EMERGENTE

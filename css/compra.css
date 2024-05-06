@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Karla:wght@200;400&family=Oswald&display=swap');
+
+:root{
+    --principal: #181818;
+    --secundario:#FEBD01;
+    --tercer: #fff8ec; 
+    --cuarto:#bb8d01;
+    --quinto: #BF9D73;
+    --letra2: #000000;
+    --letra3: #d8dddb;
+    --kanit: 'Kanit', sans-serif;
+    --karla: 'Karla', sans-serif;
+    --oswald: 'Oswald', sans-serif;
+}
+
+.case{
+    height: 80vh;
+    background-color: var(--secundario);
+    padding: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lista-compra{
+    height: 100%;
+    width: 100%;
+    max-width: 1080px;
+    background-color: var(--principal);
+    border-radius: 10px;
+    overflow-x: auto;
+    white-space: nowrap; 
+}
+
+.lista-compra::-webkit-scrollbar {
+    width: 12px;               
+}
+  
+.lista-compra::-webkit-scrollbar-track {
+    background: var(--principal);
+}
+  
+.lista-compra::-webkit-scrollbar-thumb {
+    background-color: var(--secundario);
+    border-radius: 20px; 
+    border: 3px solid var(--principal); 
+}
+#lista{
+    padding: 50px;
+}
+#lista > h2{
+    text-transform: uppercase;
+    color: var(--secundario);
+    font-family: var(--oswald);
+    font-size: 32px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 24px;
+
+}
+.divIzqLista{
+    margin-right: 16px;
+}
+.divIzqLista img{
+    max-height: 200px;
+}
+
+.divFilaBurger{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+    align-items: flex-end;
+}
+.divFilaBurger h2{
+    color: var(--secundario);
+    font-family: var(--oswald);
+    letter-spacing: 1px;
+    font-size: 26px;
+}
+
+.divDerLista ul li{
+    font-family: var(--kanit);
+    margin-bottom: 2px;
+    color: var(--letra3);
+}
+
+#extra{
+    color: var(--secundario);
+    font-family: var(--kanit);
+    cursor: pointer;
+}
+
+.finalizarCompra{
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 0px;
+    background-color: var(--secundario);
+    font-family: var(--oswald);
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+}
+
+.divButton{
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+}

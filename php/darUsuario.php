@@ -19,7 +19,7 @@
             $stmt->bind_param("ss", $tipo_usuario, $id);
             $stmt->execute();
 
-            header("Location: ../validarAdmin.php");
+            header("Location: ../darPermisos.php");
         }
     }else{
         header("Location: ../IniciarSesion/signIn.html");

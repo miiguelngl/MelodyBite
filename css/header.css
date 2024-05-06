@@ -108,6 +108,7 @@ nav{
 #icon-cart{
     height: 40px;
     margin-right: 12px;
+    margin-left: 12px;
     margin-bottom: 10px;
     cursor: pointer;
 }
@@ -157,7 +158,7 @@ nav{
 #eliminar{
     float: right;
 }
-#vaciarCarrito{
+#vaciarCarrito, #continuar{
     padding: 8px 12px;
     border-radius: 20px;
     border: 0px;
@@ -166,6 +167,15 @@ nav{
     text-transform: uppercase;
     color: #000000;
     font-size: 12px;
+    cursor: pointer;
+}
+#continuar a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #000000;
+}
+#vaciarCarrito{
+    float: right;
 }
 /* -- BOTÓN PEDIR YA -- */
 .pedir-ya {

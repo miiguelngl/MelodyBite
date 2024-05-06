@@ -29,7 +29,7 @@
                     <div id="buttons-header-case">
                         <button id="registroButton">
                             <a href="" id="">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#FEBD01" width="40px" height="40px">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#FEBD01" width="35px" height="35px">
                                     <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
                                 </svg>
                             </a>
@@ -65,16 +65,6 @@
                     ';
                 }
             ?>
-            <!-- <div id="buttons-header-case">
-                <img src="img/cart_burger.svg" alt="" id="icon-cart">
-                <button class="header-boton" id="header-boton-abrir">
-                    <svg width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 18L20 18" stroke="#FEBD01" stroke-width="2" stroke-linecap="round" fill="red"/>
-                        <path d="M4 12L20 12" stroke="#FEBD01" stroke-width="2" stroke-linecap="round" fill="red"/>
-                        <path d="M4 6L20 6" stroke="#FEBD01" stroke-width="2" stroke-linecap="round" fill="red"/>
-                    </svg>
-                </button>
-            </div> -->
             <div id="header-menu">
                 <div class="boton-menu-desplegable">
                     <button class="header-boton" id="header-boton-cerrar">
@@ -115,27 +105,39 @@
                     </div>
                 </nav>
             </div>
-            <div id="header-cart">
-                <div class="boton-menu-desplegable">
-                    <button class="header-boton" id="header-boton-cerrar-2">
-                        <svg fill="#000000" height="35px" width="35px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve">
-                            <path fill="#e5d4d4" d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
-                                c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
-                                c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
-                                c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
-                                l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
-                                c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
-                        </svg>
-                    </button>
-                </div>
-                <div id="carrito">
-                    <div class="carrito-case">
-                        <h2>Carrito de Compras</h2>
-                        <ul id="lista-productos"></ul>
-                        <p id="total">Total: 0.00€</p>
-                        <button id="vaciarCarrito">Vaciar Carrito</button>
-                    </div>
-                </div>
-            </div>
+            <?php
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
+
+                 if(isset($_SESSION['Usu'])){
+                    echo '
+                        <div id="header-cart">
+                            <div class="boton-menu-desplegable">
+                                <button class="header-boton" id="header-boton-cerrar-2">
+                                    <svg fill="#000000" height="35px" width="35px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve">
+                                        <path fill="#e5d4d4" d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+                                            c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+                                            c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+                                            c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+                                            l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+                                            c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div id="carrito">
+                                <div class="carrito-case">
+                                    <h2>Carrito de Compras</h2>
+                                    <ul id="lista-productos"></ul>
+                                    <p id="total">Total: 0.00€</p>
+                                    <button id="continuar"><a href="compra.php">Continuar</a></button>
+                                    <button id="vaciarCarrito">Vaciar Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    ';
+
+                 }
+            ?>
         </div>
     </header>
