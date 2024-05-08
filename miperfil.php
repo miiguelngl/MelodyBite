@@ -22,7 +22,7 @@
             <div class="menu-perfil">
                 <div class="lista-menu-perfil">
                     <ul>
-                        <li>Mis datos</li>
+                        <li class="active">Mis datos</li>
                         <li>Mis pedidos</li>
                         <li>Cambiar datos</li>
                         <li id="cerrar">Cerrar sesión</li>
@@ -31,7 +31,38 @@
             </div>
             <div class="datos-perfil">
                 <div class="case-datos-perfil">
-                
+                    <?php
+                        include 'php/conexion.php';
+                        // session_start();
+                        if (!isset($_SESSION['Usu'])) {
+                            header("Location: ./index.php");
+                        }
+                        $username = $_SESSION['Usu'];
+                        $consulta = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
+
+                        $stmt = $conexion->prepare($consulta);
+                        $stmt->bind_param("s", $username);
+                        $stmt->execute();
+
+
+                        $resultado = $stmt->get_result();
+                        $usuario = $resultado->fetch_assoc();
+                    ?>
+                    <div class="titulo-perfil">
+                        <h2>
+                            <?php
+                                echo 'Bienvenido/a '.$usuario['Nombre'];
+                            ?>
+                        </h2>
+                    </div>
+                    <div class="info-perfil">
+                        <?php
+                            echo '<h5>Nombre: <span>'.$usuario['Nombre'].'</span></h5>';
+                            echo '<h5>Apellidos: <span>'.$usuario['Apellidos'].'</span></h5>';
+                            echo '<h5>Correo: <span>'.$usuario['Correo'].'</span></h5>';
+                            $stmt->close();
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
