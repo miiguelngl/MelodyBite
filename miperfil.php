@@ -10,6 +10,7 @@
     <script src="js/despliegueMenu.js" defer></script>
     <script src="js/productos.js" defer></script>
     <script src="js/listaCompra.js" defer></script>
+    <script src="js/cerrarSesion.js" defer></script>
     <title>Rhapsody's Burgers</title>
 </head>
 <body>
@@ -18,35 +19,20 @@
     ?>
     <main>
         <div class="case">
-            <div class="case-perfil">
-                <?php
-                    include 'php/conexion.php';
-                    if (isset($_SESSION['Usu'])) {
-                        $username = $_SESSION['Usu'];
-                        $consulta = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
-
-                        $stmt = $conexion->prepare($consulta);
-                        $stmt->bind_param("s", $username);
-                        $stmt->execute();
-
-
-                        $resultado = $stmt->get_result();
-                        $usuario = $resultado->fetch_assoc();
-
-
-                        echo '<div id="form-contact">';
-                            echo '<form action="">';
-                                echo '<label for="">Nombre</label>';
-                                echo '<input type="text" value="'.$usuario['Nombre'].'">';
-                                echo '<label for="">Apellidos</label>';
-                                echo '<input type="text" value="'.$usuario['Apellidos'].'">';
-                                echo '<label for="">Dirección</label>';
-                                echo '<input type="text" value="'.$usuario['Direccion'].'">';
-                            echo '</form>';
-                        echo '</div>';
-                        $stmt->close();
-                    }
-                ?>
+            <div class="menu-perfil">
+                <div class="lista-menu-perfil">
+                    <ul>
+                        <li>Mis datos</li>
+                        <li>Mis pedidos</li>
+                        <li>Cambiar datos</li>
+                        <li id="cerrar">Cerrar sesión</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="datos-perfil">
+                <div class="case-datos-perfil">
+                
+                </div>
             </div>
         </div>
     </main>

@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $nombre = $_POST["name"];
     $apellidos = $_POST["subname"];
     $email = $_POST["email"];
+    $direccion = $_POST["direccion"];
     $contrasena = password_hash($_POST["pass"], PASSWORD_DEFAULT);
     
     include '../../php/conexion.php';
@@ -38,11 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         echo "El correo electrónico de usuario ya está en uso";
     }else{
 
-        $consulta = "INSERT INTO `Usuario` (Apodo, Nombre, Apellidos, Correo, Contrasena, Tipo_usuario) VALUES ('$usuario', '$nombre', '$apellidos', '$email', '$contrasena', 0)";
+        $consulta = "INSERT INTO `Usuario` (Apodo, Nombre, Apellidos, Correo, Direccion, Contrasena, Tipo_usuario) VALUES ('$usuario', '$nombre', '$apellidos', '$email', '$direccion', '$contrasena', 0)";
         if ($conexion->query($consulta) === TRUE) {
             echo "Datos insertados correctamente";
             $_SESSION["Usu"] = $usuario;
-            enviarMail($email, $nombre);
+            // enviarMail($email, $nombre);
             header("Location: ../confirmacionCuenta.html");
             exit();
         } else {
