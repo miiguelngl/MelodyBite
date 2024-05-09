@@ -22,15 +22,15 @@
             <div class="menu-perfil">
                 <div class="lista-menu-perfil">
                     <ul>
-                        <li class="active">Mis datos</li>
-                        <li>Mis pedidos</li>
-                        <li>Cambiar datos</li>
+                        <li class="active-menu" data-menu="datos">Mis datos</li>
+                        <li data-menu="pedidos">Mis pedidos</li>
+                        <li data-menu="cambiar">Cambiar datos</li>
                         <li id="cerrar">Cerrar sesión</li>
                     </ul>
                 </div>
             </div>
             <div class="datos-perfil">
-                <div class="case-datos-perfil">
+                <div class="case-datos-perfil active">
                     <?php
                         include 'php/conexion.php';
                         // session_start();
@@ -56,12 +56,53 @@
                         </h2>
                     </div>
                     <div class="info-perfil">
-                        <?php
-                            echo '<h5>Nombre: <span>'.$usuario['Nombre'].'</span></h5>';
-                            echo '<h5>Apellidos: <span>'.$usuario['Apellidos'].'</span></h5>';
-                            echo '<h5>Correo: <span>'.$usuario['Correo'].'</span></h5>';
-                            $stmt->close();
-                        ?>
+                        <div class="info-perfil-overflow">
+                            <?php
+                                echo '<h5>Nombre: <br><span>'.$usuario['Nombre'].'</span></h5><hr>';
+                                echo '<h5>Apellidos: <br><span>'.$usuario['Apellidos'].'</span></h5><hr>';
+                                echo '<h5>Correo: <br><span>'.$usuario['Correo'].'</span></h5><hr>';
+                                echo '<h5>Dirección: <br><span>'.$usuario['Direccion'].'</span></h5>';
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-pedidos-perfil">
+                    <div class="titulo-perfil">
+                        <h2>
+                            <?php
+                                echo 'Pedidos realizados';
+                            ?>
+                        </h2>
+                    </div>
+                    <div class="info-perfil">
+                        <div class="info-perfil-overflow">
+                            <?php
+                                echo '<h5>Nombre: <br><span>'.$usuario['Nombre'].'</span></h5><hr>';
+                                echo '<h5>Apellidos: <br><span>'.$usuario['Apellidos'].'</span></h5><hr>';
+                                echo '<h5>Correo: <br><span>'.$usuario['Correo'].'</span></h5><hr>';
+                                echo '<h5>Dirección: <br><span>'.$usuario['Direccion'].'</span></h5>';
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-cambiar-perfil">
+                    <div class="titulo-perfil">
+                        <h2>
+                            <?php
+                                echo 'Cambiar datos del perfil';
+                            ?>
+                        </h2>
+                    </div>
+                    <div class="info-perfil">
+                        <div class="info-perfil-overflow">
+                            <?php
+                                echo '<h5>Nombre: <br><span>'.$usuario['Nombre'].'</span></h5><hr>';
+                                echo '<h5>Apellidos: <br><span>'.$usuario['Apellidos'].'</span></h5><hr>';
+                                echo '<h5>Correo: <br><span>'.$usuario['Correo'].'</span></h5><hr>';
+                                echo '<h5>Dirección: <br><span>'.$usuario['Direccion'].'</span></h5>';
+                                // $stmt->close();
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,5 +111,6 @@
     <?php
         include './php/footer.php';
     ?>
+    <script src="js/menuPerfil.js" defer></script>
 </body>
 </html>
