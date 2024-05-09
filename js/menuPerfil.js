@@ -1,4 +1,7 @@
 function cambiarPestaña(pestanya) {
+    document.querySelector(".active").classList.remove("active");
+    let nameClass = ".case-" + pestanya + "-perfil";
+    document.querySelector(nameClass).classList.add("active");
     
 }
 
