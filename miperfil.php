@@ -77,10 +77,28 @@
                     <div class="info-perfil">
                         <div class="info-perfil-overflow">
                             <?php
-                                echo '<h5>Nombre: <br><span>'.$usuario['Nombre'].'</span></h5><hr>';
-                                echo '<h5>Apellidos: <br><span>'.$usuario['Apellidos'].'</span></h5><hr>';
-                                echo '<h5>Correo: <br><span>'.$usuario['Correo'].'</span></h5><hr>';
-                                echo '<h5>Dirección: <br><span>'.$usuario['Direccion'].'</span></h5>';
+                                $consulta2 = "SELECT * FROM `Pedidos` WHERE `ID_Usuario` = ?";
+
+                                $stmt = $conexion->prepare($consulta2);
+                                $stmt->bind_param("s", $usuario['IdUsuario']);
+                                $stmt->execute();
+        
+                                $resultado2 = $stmt->get_result();
+                                $pedidos = $resultado2->fetch_assoc();
+
+                                // foreach ($pedidos as $pedido) {
+                                    echo '<div class="case-pedido">';
+                                    echo '<h2>Pedido número: '. $pedido['ID_Pedido'] .'</h2>';
+                                    if ($pedido['Estado'] == 0) {
+                                        echo '<h5>Estado del pedido: <br><span>Oido cocina - En preparación</span></h5><hr>';
+                                    }else if($pedido['Estado'] == 1){
+                                        echo '<h5>Estado del pedido: <br><span>En reparto</span></h5><hr>';
+                                    }else{
+                                        echo '<h5>Estado del pedido: <br><span>Entregado</span></h5><hr>';
+                                    }
+                                    echo '</div>';
+                                // }
+                                
                             ?>
                         </div>
                     </div>

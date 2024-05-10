@@ -101,6 +101,14 @@ if(document.getElementById('vaciarCarrito')){
 
 //VENTANA EMERGENTE
 document.addEventListener('DOMContentLoaded', function() {
+
+    // document.getElementById("icon-cart").addEventListener('click', function() {
+    //     let carrito = obtenerCarritoLocalStorage();
+    //     if(carrito == null){
+    //         document.getElementById("continuar").style.display = 'none';
+    //     }else document.getElementById("continuar").style.display = 'block';
+    // });
+
     const lupa = document.querySelectorAll('#lupa');
 
     lupa.forEach(function(lupaItem) {
