@@ -33,9 +33,16 @@ function actualizarIDs(carrito){
     });
 }
 
+function botonContinuar(){
+    let listaProductos = document.getElementById("lista-productos");
+    if(listaProductos.textContent == ''){
+        document.getElementById("continuar").style.display = 'none';
+    }else{
+        document.getElementById("continuar").style.display = 'block';
+    } 
+}
+
 function eliminarProducto(idProducto){
-    console.log("e");
-    // let id = element.getAttribute('name');
     let carrito = obtenerCarritoLocalStorage();
     carrito.splice(idProducto, 1);
     actualizarIDs(carrito);
@@ -71,6 +78,7 @@ function actualizarCarrito() {
             let idProducto = parseInt(this.getAttribute('name'));
             eliminarProducto(idProducto); // Llama a la función eliminarProducto con el ID del producto
         });
+        x.addEventListener('click', botonContinuar);
     });
 
     document.getElementById('total').textContent = `Total: ${parseFloat(total).toFixed(2)}€`;
@@ -102,12 +110,9 @@ if(document.getElementById('vaciarCarrito')){
 //VENTANA EMERGENTE
 document.addEventListener('DOMContentLoaded', function() {
 
-    // document.getElementById("icon-cart").addEventListener('click', function() {
-    //     let carrito = obtenerCarritoLocalStorage();
-    //     if(carrito == null){
-    //         document.getElementById("continuar").style.display = 'none';
-    //     }else document.getElementById("continuar").style.display = 'block';
-    // });
+    let iconCart = document.getElementById("icon-cart");
+    
+    iconCart.addEventListener('click', botonContinuar);
 
     const lupa = document.querySelectorAll('#lupa');
 
