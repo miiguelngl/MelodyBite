@@ -89,6 +89,11 @@ var buttons = document.querySelectorAll(".añadir");
 buttons.forEach(button => {
     // Agrega eventos de clic para los demás botones "Añadir" aquí...
     button.addEventListener('click', () => añadirAlCarrito(button.getAttribute('name'), button.dataset.precio, button.parentElement.parentElement.firstElementChild.firstChild.firstChild.dataset.ingredientes));
+    let carroDesplegado = document.getElementById('header-cart');
+        
+    button.addEventListener('click', function() {
+        document.getElementById('header-cart').classList.add('active-2');
+    });
 });
 
 // Al cargar la página, actualizar el carrito
@@ -104,16 +109,19 @@ function vaciarCarrito() {
 // Captura el clic en el botón "Vaciar Carrito" y llama a la función para vaciarlo
 if(document.getElementById('vaciarCarrito')){
     document.getElementById('vaciarCarrito').addEventListener('click', vaciarCarrito);
+    document.getElementById('vaciarCarrito').addEventListener('click', botonContinuar);
 }
 
 
 //VENTANA EMERGENTE
 document.addEventListener('DOMContentLoaded', function() {
 
-    let iconCart = document.getElementById("icon-cart");
+    if(document.getElementById("icon-cart")){
+        let iconCart = document.getElementById("icon-cart");
     
-    iconCart.addEventListener('click', botonContinuar);
-
+        iconCart.addEventListener('click', botonContinuar);
+    }
+    
     const lupa = document.querySelectorAll('#lupa');
 
     lupa.forEach(function(lupaItem) {
@@ -175,7 +183,13 @@ document.addEventListener('DOMContentLoaded', function() {
             contenidoPrincipalVentanaText.appendChild(nombreHamburguesa);
             contenidoPrincipalVentanaText.appendChild(descripcionHamburguesa);
             contenidoPrincipalVentanaText.appendChild(precioHamburguesa);
-            contenidoPrincipalVentanaText.appendChild(botonHamburguesa);
+            if(document.querySelector(".carta-case-3")){
+                contenidoPrincipalVentanaText.appendChild(botonHamburguesa);
+            }else{
+                const frasePedido = document.createElement('p');
+                frasePedido.textContent = 'Registrate o inicia sesión para realizar un pedido.';
+                contenidoPrincipalVentanaText.appendChild(frasePedido);
+            }
             contenidoPrincipalVentana.appendChild(contenidoPrincipalVentanaText);
             contenidoVentana.appendChild(contenidoPrincipalVentana);
 

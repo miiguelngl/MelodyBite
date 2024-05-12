@@ -84,9 +84,7 @@
                                 $stmt->execute();
         
                                 $resultado2 = $stmt->get_result();
-                                $pedidos = $resultado2->fetch_assoc();
-
-                                // foreach ($pedidos as $pedido) {
+                                while($pedido = $resultado2->fetch_assoc()) {
                                     echo '<div class="case-pedido">';
                                     echo '<h2>Pedido número: '. $pedido['ID_Pedido'] .'</h2>';
                                     if ($pedido['Estado'] == 0) {
@@ -97,7 +95,7 @@
                                         echo '<h5>Estado del pedido: <br><span>Entregado</span></h5><hr>';
                                     }
                                     echo '</div>';
-                                // }
+                                }
                                 
                             ?>
                         </div>

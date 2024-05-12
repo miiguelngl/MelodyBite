@@ -41,6 +41,10 @@
                             echo '<input type="text" value="'.$usuario['Apellidos'].'">';
                             echo '<label for="">Dirección</label>';
                             echo '<input type="text" value="'.$usuario['Direccion'].'">';
+                            echo '<label for="">Tarjeta</label>';
+                            echo '<input type="number" value="" placeholder="Nº tarjeta">';
+                            echo '<label for="">CVV</label>';
+                            echo '<input type="number" value="" placeholder="CVV">';
                         echo '</form>';
                     echo '</div>';
                     $stmt->close();

@@ -49,6 +49,7 @@ form input, select{
     height: 100%;
     width: 50%;
     max-width: 1080px;
+    max-height: 80vh;
     background-color: var(--principal);
     border-radius: 10px;
     overflow-x: auto;

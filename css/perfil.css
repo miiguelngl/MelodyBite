@@ -124,7 +124,7 @@
     height: max-content;
     max-height: 500px;
 }
-.info-perfil-overflow h5{
+.info-perfil-overflow h5, .case-pedido h2{
     font-size: 1rem;
     line-height: 1.20;
     font-family: var(--oswald);
