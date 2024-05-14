@@ -92,7 +92,7 @@ buttons.forEach(button => {
     let carroDesplegado = document.getElementById('header-cart');
         
     button.addEventListener('click', function() {
-        document.getElementById('header-cart').classList.add('active-2');
+        carroDesplegado.classList.add('active-2');
     });
 });
 

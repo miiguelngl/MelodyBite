@@ -43,7 +43,7 @@ window.onload(new function() {
             const clickX2 = event.clientX;
             
             if (targetElement2 !== carroAbrir && targetElement2 !== carroCerrar &&
-                clickX2 < screenWidth2 * 0.7) {
+                clickX2 < screenWidth2 * 0.7 && event.target.className !== 'añadir') {
                 carroDesplegado.classList.remove('active-2');
             }
         });
