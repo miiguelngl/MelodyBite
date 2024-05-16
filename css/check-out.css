@@ -122,16 +122,12 @@ form input, select{
     cursor: pointer;
     text-align: center;
     margin: auto;
-}
-.finalizarCompra a{
     font-family: var(--oswald);
     text-transform: uppercase;
     color: #000000;
     font-size: 20px;
     font-weight: bold;
-    text-decoration: none;
 }
-
 .divButton{
     display: flex;
     align-items: center;
@@ -147,3 +143,4 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+

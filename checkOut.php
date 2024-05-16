@@ -45,6 +45,7 @@
                             echo '<input type="number" value="" placeholder="Nº tarjeta">';
                             echo '<label for="">CVV</label>';
                             echo '<input type="number" value="" placeholder="CVV">';
+                            echo '<button type="submit" class="finalizarCompra">REALIZAR PEDIDO</button>';
                         echo '</form>';
                     echo '</div>';
                     $stmt->close();
@@ -52,7 +53,7 @@
             ?>
             <div class="lista-compra">
                 <div id="lista">
-
+                
                 </div>
             </div>
         </div>

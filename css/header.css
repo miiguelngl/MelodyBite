@@ -24,9 +24,9 @@ header{
     justify-content: space-around;
     position: relative;
 }
-header img{
-    height: 95px;
-    margin-right: 72px;
+#titulo a img{
+    height: 50px;
+    margin-right: 0px;
 }
 #header-pedido{
     display: none;
@@ -40,16 +40,25 @@ header img{
     display: flex;
     flex-direction: row;
     align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
 }
 /* -- USUARIO -- */
 #registroButton{
+    background-color: transparent;
+    border: 0;
+}
+#registroButton svg{
+    margin-top: 4px;
+}
+#userButton{
     background-color: var(--secundario);
     border: 0;
     border-radius: 25px;
     padding: 6px 12px;
     margin-right: 12px;
 }
-#registroButton a{
+#userButton a{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -57,7 +66,7 @@ header img{
     text-decoration: none;
     font-family: var(--kanit);
 }
-#registroButton svg{
+#userButton svg{
     margin-left: 12px;
 }
 /* -- HEADER MENÚ -- */
@@ -302,7 +311,8 @@ nav{
         letter-spacing: 1px;
         display: block;
     }
-    header img{
+    #titulo a img{
+        height: 95px;
         margin-right: 72px;
     }
     #header-cart {
@@ -339,7 +349,8 @@ nav{
     #header-menu.active {
         left: 39%;
     }
-    header img{
+    #titulo a img{
+        height: 95px;
         margin-right: 72px;
     }
     #header-cart {

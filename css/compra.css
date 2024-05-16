@@ -16,7 +16,7 @@
 .case{
     height: 80vh;
     background-color: var(--secundario);
-    padding: 75px;
+    padding: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +30,6 @@
     background-color: var(--principal);
     border-radius: 10px;
     overflow-x: auto;
-    white-space: nowrap; 
 }
 
 .lista-compra::-webkit-scrollbar {
@@ -47,7 +46,7 @@
     border: 3px solid var(--principal); 
 }
 #lista{
-    padding: 50px;
+    padding: 10px;
 }
 #lista > h2{
     text-transform: uppercase;
@@ -69,27 +68,28 @@
 
 .divFilaBurger{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-bottom: 12px;
-    align-items: flex-end;
 }
 .divFilaBurger h2{
     color: var(--secundario);
     font-family: var(--oswald);
     letter-spacing: 1px;
     font-size: 26px;
+    margin-left: 12px;
 }
 
 .divDerLista ul li{
     font-family: var(--kanit);
     margin-bottom: 2px;
     color: var(--letra3);
+    margin-left: 12px;
 }
-
 #extra{
     color: var(--secundario);
     font-family: var(--kanit);
     cursor: pointer;
+    margin-left: 12px;
 }
 
 .finalizarCompra{
@@ -114,4 +114,38 @@
     display: flex;
     align-items: center;
     margin-top: 24px;
+}
+/* -- RESPONSIVE -- */
+@media only screen and (max-width: 600px){
+    .divFilaBurger{
+        align-items: center;
+    }
+    .divDerLista {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 960px){
+    .case{
+        padding: 75px;
+    }
+    .divFilaBurger{
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    #lista{
+        padding: 50px;
+    }
+}
+
+@media only screen and (min-width: 960px){
+    .case{
+        padding: 75px;
+    }
+    .divFilaBurger{
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    #lista{
+        padding: 50px;
+    }
 }

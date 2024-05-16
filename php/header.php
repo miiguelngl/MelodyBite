@@ -18,7 +18,7 @@
                 <img src="img/Logo Rhapsody Secundario.svg" alt="">
             </a>
         </div>
-        <div>
+        <div class="menus">
             <?php
                 if (session_status() == PHP_SESSION_NONE) {
                     session_start();
@@ -27,7 +27,7 @@
                  if(isset($_SESSION['Usu'])){
                     echo '
                     <div id="buttons-header-case">
-                        <button id="registroButton">
+                        <button id="userButton">
                             <a href="miperfil.php" id="">
                             '. $_SESSION['Usu'] .'
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#FFFFFF" width="30px" height="30px">
