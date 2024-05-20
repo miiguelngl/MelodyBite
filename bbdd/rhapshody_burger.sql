@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-05-2024 a las 14:33:25
+-- Tiempo de generación: 20-05-2024 a las 14:46:06
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -51,6 +51,29 @@ INSERT INTO `hamburguesas` (`IdHamburguesa`, `Nombre`, `Descripcion_corta`, `Des
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `pedidos`
+--
+
+CREATE TABLE `pedidos` (
+  `ID_Pedido` int(11) NOT NULL,
+  `ID_Usuario` int(11) NOT NULL,
+  `Pedido` varchar(512) NOT NULL,
+  `Estado` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `pedidos`
+--
+
+INSERT INTO `pedidos` (`ID_Pedido`, `ID_Usuario`, `Pedido`, `Estado`) VALUES
+(1, 8, '1, 2, 5, 2', 2),
+(2, 8, '2, 4, 6', 2),
+(3, 8, '3', 1),
+(7, 8, 'La Rockera, La Rockera, La Rockera', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -59,6 +82,7 @@ CREATE TABLE `usuario` (
   `Apodo` varchar(255) DEFAULT NULL,
   `Nombre` varchar(255) DEFAULT NULL,
   `Apellidos` varchar(255) DEFAULT NULL,
+  `Direccion` varchar(255) DEFAULT NULL,
   `Correo` varchar(255) DEFAULT NULL,
   `Contrasena` varchar(255) DEFAULT NULL,
   `Tipo_usuario` tinyint(1) DEFAULT NULL
@@ -68,10 +92,11 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`IdUsuario`, `Apodo`, `Nombre`, `Apellidos`, `Correo`, `Contrasena`, `Tipo_usuario`) VALUES
-(8, 'miguel', 'miguel', 'angel', 'prueba@gmail.com', '$2y$10$7oSowzZ6cOxFnxzU62CIF.aKCQdxto.n0g5uTfKBatKjY2aYpNZtC', 1),
-(9, 'pablitoElMotos', 'Pablo', 'El Motorista', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', 0),
-(10, 'pabloCocinero', 'Pablo', 'Cocinero', 'pablococinero@gmail.com', '$2y$10$da0gDXv9DnLgQxW6MGThnOBMCjpmtzBxOeUXtF4optzlIwdhywABS', 2);
+INSERT INTO `usuario` (`IdUsuario`, `Apodo`, `Nombre`, `Apellidos`, `Direccion`, `Correo`, `Contrasena`, `Tipo_usuario`) VALUES
+(8, 'miguelngl', 'Miguel Ángel', 'García', 'C/ Juan Fabregat 9', 'prueba@gmail.com', '$2y$10$7oSowzZ6cOxFnxzU62CIF.aKCQdxto.n0g5uTfKBatKjY2aYpNZtC', 1),
+(9, 'pablitoElMotos', 'Pablo', 'El Motorista', '', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', 0),
+(10, 'pabloCocinero', 'Pablo', 'Cocinero', '', 'pablococinero@gmail.com', '$2y$10$da0gDXv9DnLgQxW6MGThnOBMCjpmtzBxOeUXtF4optzlIwdhywABS', 2),
+(11, 'rafeta', 'Rafa', 'Aaaaa', 'Tu madre', 'rafeta@gmail.com', '$2y$10$ODbM631rcn4OZFGyRoh4q.EBfmkr3VsgTYr4Xf8z4lDs6LzqjOLvG', 0);
 
 --
 -- Índices para tablas volcadas
@@ -82,6 +107,13 @@ INSERT INTO `usuario` (`IdUsuario`, `Apodo`, `Nombre`, `Apellidos`, `Correo`, `C
 --
 ALTER TABLE `hamburguesas`
   ADD PRIMARY KEY (`IdHamburguesa`);
+
+--
+-- Indices de la tabla `pedidos`
+--
+ALTER TABLE `pedidos`
+  ADD PRIMARY KEY (`ID_Pedido`),
+  ADD KEY `ID del usuario` (`ID_Usuario`);
 
 --
 -- Indices de la tabla `usuario`
@@ -100,10 +132,26 @@ ALTER TABLE `hamburguesas`
   MODIFY `IdHamburguesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
+-- AUTO_INCREMENT de la tabla `pedidos`
+--
+ALTER TABLE `pedidos`
+  MODIFY `ID_Pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `pedidos`
+--
+ALTER TABLE `pedidos`
+  ADD CONSTRAINT `ID del usuario` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`IdUsuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

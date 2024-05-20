@@ -49,7 +49,6 @@ function actualizarLista() {
 
         const listaUL = document.createElement('ul');
         let ingredientesBurger = burger.ingredientes.split(', ');
-        console.log(burger.ingredientes);
         ingredientesBurger.forEach(ingrediente => {
             let listaLI = document.createElement('li');
             listaLI.textContent = ingrediente;

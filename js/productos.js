@@ -17,7 +17,8 @@ function añadirAlCarrito(nombreBurger, precioBurger, ingredientesBurger) {
         id: idBurger,
         nombre: nombreBurger,
         precio: precioBurger,
-        ingredientes: ingredientesBurger
+        ingredientes: ingredientesBurger,
+        extras: ''
     };
     idBurger++;
     carrito.push(burger); // Añadir nombre de la hamburguesa al carrito

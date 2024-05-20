@@ -18,19 +18,19 @@
     height: auto;
     background-color: var(--secundario);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 32px;
 }
+
 form{
     background-color: var(--principal);
     display: flex;
     flex-direction: column;
-    padding: 50px 25px;
+    padding: 25px;
     border-radius: 15px;
     height: auto;
-    width: 400px;
 }
 form label{
     color: var(--secundario);
@@ -47,13 +47,13 @@ form input, select{
 }
 .lista-compra{
     height: 100%;
-    width: 50%;
+    width: 100%;
     max-width: 1080px;
     max-height: 80vh;
     background-color: var(--principal);
     border-radius: 10px;
     overflow-x: auto;
-    white-space: nowrap; 
+    margin-top: 25px;
 }
 
 .lista-compra::-webkit-scrollbar {
@@ -70,18 +70,17 @@ form input, select{
     border: 3px solid var(--principal); 
 }
 #lista{
-    padding: 50px;
+    padding: 12px;
 }
 #lista > h2{
     text-transform: uppercase;
     color: var(--secundario);
     font-family: var(--oswald);
-    font-size: 32px;
+    font-size: 22px;
     text-align: center;
     padding: 0px;
     margin: 0px;
     margin-bottom: 24px;
-
 }
 .divIzqLista{
     margin-right: 16px;
@@ -92,7 +91,7 @@ form input, select{
 
 .divFilaBurger{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-bottom: 12px;
     align-items: flex-end;
 }
@@ -144,3 +143,31 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+/* -- RESPONSIVE -- */
+@media only screen and (max-width: 600px){
+    #form-contact{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 601px){
+    .case{
+        flex-direction: row;
+    }
+    form{
+        width: 400px;
+        padding: 50px 25px;
+    }
+    .lista-compra{
+        margin-top: 0px;
+        width: 50%;
+    }
+    .divFilaBurger{
+        flex-direction: row;
+    }
+    #lista{
+        padding: 50px;
+    }
+    #lista > h2{
+        font-size: 32px;
+    }
+}

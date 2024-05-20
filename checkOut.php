@@ -10,6 +10,7 @@
     <script src="js/despliegueMenu.js" defer></script>
     <script src="js/productos.js" defer></script>
     <script src="js/listaCompra.js" defer></script>
+    <script src="js/burgersAddForm.js" defer></script>
     <title>Rhapsody's Burgers</title>
 </head>
 <body>
@@ -34,18 +35,19 @@
 
 
                     echo '<div id="form-contact">';
-                        echo '<form action="">';
+                        echo '<form action="php/hacerPedido.php" method="post">';
                             echo '<label for="">Nombre</label>';
-                            echo '<input type="text" value="'.$usuario['Nombre'].'">';
+                            echo '<input type="text" name="nombre" value="'.$usuario['Nombre'].'">';
                             echo '<label for="">Apellidos</label>';
-                            echo '<input type="text" value="'.$usuario['Apellidos'].'">';
+                            echo '<input type="text" name="apellido" value="'.$usuario['Apellidos'].'">';
                             echo '<label for="">Dirección</label>';
-                            echo '<input type="text" value="'.$usuario['Direccion'].'">';
+                            echo '<input type="text" name="direccion" value="'.$usuario['Direccion'].'">';
                             echo '<label for="">Tarjeta</label>';
-                            echo '<input type="number" value="" placeholder="Nº tarjeta">';
+                            echo '<input type="number" min="0" pattern="[0-9]{12}" placeholder="Nº tarjeta">';
                             echo '<label for="">CVV</label>';
-                            echo '<input type="number" value="" placeholder="CVV">';
-                            echo '<button type="submit" class="finalizarCompra">REALIZAR PEDIDO</button>';
+                            echo '<input type="number" min="0" pattern="[0-9]{3}" value="" placeholder="CVV">';
+                            echo '<input type="text"  value="" name="hamburguesas" style="display: none;">';
+                            echo '<input type="submit" class="finalizarCompra" value="REALIZAR PEDIDO">';
                         echo '</form>';
                     echo '</div>';
                     $stmt->close();
