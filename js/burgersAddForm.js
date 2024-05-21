@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     carrito.forEach(burger => {
         if(burger.extras != null){
-            hamburguesasPedido.push(burger.nombre + ' - ' + burger.extras);
+            hamburguesasPedido.push(burger.nombre + ' - {EXTRAS: ' + burger.extras + '}');
         }else hamburguesasPedido.push(burger.nombre);
     });
 

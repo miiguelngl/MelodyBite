@@ -48,7 +48,7 @@ function actualizarLista() {
         tituloBurger.innerText = burger.nombre + ' - ';
         
         let precioBurger = document.createElement("span");
-        precioBurger.innerText = parseFloat(burger.precio).toFixed(0);
+        precioBurger.innerText = parseFloat(burger.precio);
         tituloBurger.appendChild(precioBurger);
         tituloBurger.innerHTML += '€';
         divDer.appendChild(tituloBurger);
@@ -60,6 +60,16 @@ function actualizarLista() {
             listaLI.textContent = ingrediente;
             listaUL.appendChild(listaLI);
         });
+        if (urlActual.includes("checkOut")){
+            if(burger.extras){
+                let extras = burger.extras.split(", ");
+                extras.forEach(extra => {
+                    let listaLI = document.createElement('li');
+                    listaLI.textContent = "EXTRA - " + extra;
+                    listaUL.appendChild(listaLI);
+                });
+            }
+        }
         divDer.appendChild(listaUL);
 
         if (urlActual.includes("compra")) {

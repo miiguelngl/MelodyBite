@@ -36,12 +36,23 @@
 
                     echo '<div id="form-contact">';
                         echo '<form action="php/hacerPedido.php" method="post">';
+                            echo '<h2>DATOS DE PAGO</h2>';
                             echo '<label for="">Nombre</label>';
                             echo '<input type="text" name="nombre" value="'.$usuario['Nombre'].'">';
                             echo '<label for="">Apellidos</label>';
                             echo '<input type="text" name="apellido" value="'.$usuario['Apellidos'].'">';
                             echo '<label for="">Dirección</label>';
                             echo '<input type="text" name="direccion" value="'.$usuario['Direccion'].'">';
+                            echo '<div id="puertaPiso">';
+                                echo '<div id="piso">';
+                                    echo '<label for="">Piso</label><br>';
+                                    echo '<input type="text" name="piso" id="pisoInput" value="">';
+                                echo '</div>';
+                                echo '<div id="puerta">';
+                                    echo '<label for="">Puerta</label><br>';
+                                    echo '<input type="text" name="puerta" id="puertaInput" value="">';
+                                echo '</div>';
+                            echo '</div>';
                             echo '<label for="">Tarjeta</label>';
                             echo '<input type="number" min="0" pattern="[0-9]{12}" placeholder="Nº tarjeta">';
                             echo '<label for="">CVV</label>';
