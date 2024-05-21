@@ -10,6 +10,7 @@
     <script src="js/despliegueMenu.js" defer></script>
     <script src="js/productos.js" defer></script>
     <script src="js/listaCompra.js" defer></script>
+    <script src="js/anyadirIngrediente.js" defer></script>
     <title>Rhapsody's Burgers</title>
 </head>
 <body>

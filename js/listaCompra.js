@@ -42,9 +42,15 @@ function actualizarLista() {
 
         let divDer = document.createElement("div");
         divDer.classList.add("divDerLista");
+        divDer.dataset.idBurger = burger.id;
 
         let tituloBurger = document.createElement("h2");
-        tituloBurger.innerText = burger.nombre + ' - ' + parseFloat(burger.precio).toFixed(0) + '€';
+        tituloBurger.innerText = burger.nombre + ' - ';
+        
+        let precioBurger = document.createElement("span");
+        precioBurger.innerText = parseFloat(burger.precio).toFixed(0);
+        tituloBurger.appendChild(precioBurger);
+        tituloBurger.innerHTML += '€';
         divDer.appendChild(tituloBurger);
 
         const listaUL = document.createElement('ul');
