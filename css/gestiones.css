@@ -59,3 +59,15 @@ table{
     flex-wrap: wrap;
     justify-content: space-around;
 }
+body{
+    background-color: var(--principal);
+}
+.submenu{
+    padding: 12px;
+}
+.submenu a{
+    color: var(--secundario);
+    font-family: var(--kanit);
+    text-decoration: none;
+    margin-right: 12px;
+}

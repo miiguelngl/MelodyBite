@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rhapsody's Burgers</title>
     <link rel="stylesheet" href="css/normalize.css">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="css/gestiones.css">
-
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
@@ -79,7 +77,7 @@ if(isset($_SESSION["Usu"])){
                     </td></tr>";
                 }
                 echo "</table>";
-                echo "<nav class='menu'><a href=miperfil.php>Volver</a></nav>";
+                echo "<nav class='submenu'><a href=miperfil.php>Volver</a></nav>";
             }
         }else{
             echo("<h4>ERROR 404 NOT FOUND</h4>");

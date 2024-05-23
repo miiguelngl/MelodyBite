@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rhapsody's Burgers</title>
     <link rel="stylesheet" href="css/normalize.css">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="css/gestiones.css">
-
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
@@ -48,9 +46,8 @@ if(isset($_SESSION["Usu"])){
             $result2 = $stmt2->get_result();
             if($result2->num_rows > 0){
                 $array2 = $result2->fetch_assoc();
-                //Bucle para cada solicitud
                 echo "<table>";
-                echo "<tr><th>Nº Pedido</th><th>Pedido</th><th>Dirección</th><th>Estado</th></tr>";
+                echo "<tr><th>Nº Pedido</th><th>Pedido</th><th>Dirección</th><th>Estado</th><th>Cambiar estado</th></tr>";
                 foreach ($result2 as $pedido) {
                     echo "<tr>";
                     echo "<td>" . $pedido['ID_Pedido'] . "</td>";
@@ -90,10 +87,28 @@ if(isset($_SESSION["Usu"])){
                     }else{
                         echo "<td>Entregado</td>";
                     };
+                    echo "<td class='estado'>
+                    <form action='php/cambiarPedido.php' method='post' enctype='multipart/form-data'>
+                        <input type='number' id='id' name='id' class='d-none' value='".$pedido['ID_Pedido']."'>
+                        <input type='hidden' name='estado' value='0'>
+                        <input type='submit' id='enviar_admin' class='btn btn-success' value='En cocina'>
+                    </form>
+                    <form action='php/cambiarPedido.php' method='post' enctype='multipart/form-data'>
+                        <input type='number' id='id' name='id' class='d-none' value='".$pedido['ID_Pedido']."'>
+                        <input type='hidden' name='estado' value='1'>
+                        <input type='submit' id='enviar_cocinero' class='btn btn-success' value='En reparto'>
+                    </form>
+                    <form action='php/cambiarPedido.php' method='post' enctype='multipart/form-data'>
+                        <input type='number' id='id' name='id' class='d-none' value='".$pedido['ID_Pedido']."'>
+                        <input type='hidden' name='estado' value='2'>
+                        <input type='submit' id='enviar_cocinero' class='btn btn-success' value='Entregado'>
+                    </form>
+                    </td>";
                     echo "</tr>";
                 }
                 echo "</table>";
-                echo "<nav class='menu'><a href=miperfil.php>Volver</a></nav>";
+                echo '<nav class="submenu"><a href="miperfil.php">Volver</a>';
+                echo '<a href="gestionarBurgers.php">Ver hamburguesas</a></nav>';
             }
         }else{
             echo("<h4>ERROR 404 NOT FOUND</h4>");
