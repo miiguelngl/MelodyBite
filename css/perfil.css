@@ -117,7 +117,7 @@
     font-size: 28px;
 }
 .info-perfil{
-    overflow: hidden;
+    overflow-x: auto;
 }
 .info-perfil-overflow{
     overflow-x: auto;
@@ -142,5 +142,20 @@
 }
 
 .active{
-    display: block !important;
+    display: inline-flex !important;
+    flex-direction: column;
+}
+
+.info-perfil::-webkit-scrollbar {
+    width: 12px;               
+}
+  
+.info-perfil::-webkit-scrollbar-track {
+    background: var(--principal);
+}
+  
+.info-perfil::-webkit-scrollbar-thumb {
+    background-color: var(--secundario);
+    border-radius: 20px; 
+    border: 3px solid var(--principal); 
 }

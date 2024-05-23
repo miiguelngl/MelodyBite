@@ -6,6 +6,9 @@
     $nombreCliente = $_POST["nombre"];
     $apellidoCliente = $_POST["apellido"];
     $direccion = $_POST["direccion"];
+    $piso = $_POST["piso"];
+    $puerta = $_POST["puerta"];
+    $direccionEnt = $direccion . ", Piso: " . $piso . ", Puerta: " . $puerta;
     // $cp = $_POST["cp"];
 
     /* HAMBURGUESA */
@@ -31,9 +34,9 @@
             $idUsuario = $fila['IdUsuario'];
     
             // Preparar la inserción del pedido
-            $subida = "INSERT INTO `Pedidos` (ID_Usuario, Pedido, Estado) VALUES (?, ?, 0)";
+            $subida = "INSERT INTO `Pedidos` (ID_Usuario, Pedido, Direccion, Estado) VALUES (?, ?, ?, 0)";
             $stmt = $conexion->prepare($subida);
-            $stmt->bind_param("is", $idUsuario, $burgers);
+            $stmt->bind_param("iss", $idUsuario, $burgers, $direccionEnt);
             $stmt->execute();
     
             // Redireccionar a la página de confirmación
