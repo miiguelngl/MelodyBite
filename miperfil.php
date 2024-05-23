@@ -66,7 +66,7 @@
                                 if ($usuario['Tipo_usuario'] == 2 || $usuario['Tipo_usuario'] == 1) {
                                     echo '<hr><h5>Organización interna</h5>';
                                     echo '<div class="organizacion">';
-                                        echo '<a href="gestionarBurgers.php">Cocina</a>';
+                                        echo '<a href="cocina.php">Cocina</a>';
                                         echo '<a href="gestionarBurgers.php">Hamburguesas</a>';
                                         if($usuario['Tipo_usuario'] == 1){
                                             echo '<a href="darPermisos.php">Usuarios</a>';

@@ -63,10 +63,7 @@ if(isset($_SESSION["Usu"])){
                     echo "</tr>";
                 }
                 echo "</table>";
-                echo "<nav class='menu'><a href=./admin.php>Validar Productos</a></nav>";
-            }else{
-                echo "<p style=text-align:center>No hay hamburguesas</p>";
-                echo "<nav class='menu'><a href=./admin>Validar Zapatillas</a></nav>";
+                echo "<nav class='menu'><a href=miperfil.php>Volver</a></nav>";
             }
         }else{
             echo("<h4>ERROR 404 NOT FOUND</h4>");
