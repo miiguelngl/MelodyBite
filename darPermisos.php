@@ -50,10 +50,17 @@ if(isset($_SESSION["Usu"])){
                 $array2 = $result2->fetch_assoc();
                 //Bucle para cada solicitud
                 echo "<table>";
-                echo "<tr><th>IdUsuario</th><th>Nombre</th><th>Correo</th><th>Admin</th><th>Estado</th></tr>";
+                echo "<tr><th>IdUsuario</th><th>Nombre</th><th>Correo</th><th>Tipo usuario</th><th>Estado</th></tr>";
                 while ($array2 = $result2->fetch_assoc()) {
-                    echo "<tr><td>".$array2['IdUsuario']."</td><td><p>".$array2['Apodo']."</p></td><td>".$array2['Correo']."</td><td>".$array2['Tipo_usuario']."</td>
-                    <td class='estado'>
+                    echo "<tr><td>".$array2['IdUsuario']."</td><td><p>".$array2['Apodo']."</p></td><td>".$array2['Correo']."</td><td>";
+                    if($array2['Tipo_usuario'] == 0){
+                        echo "Cliente</td>";
+                    } elseif($array2['Tipo_usuario'] == 1){
+                        echo "Administrador</td>";
+                    } else {
+                        echo "Cocinero</td>";
+                    }
+                    echo "<td class='estado'>
                     <form action='php/darUsuario.php' method='post' enctype='multipart/form-data'>
                         <input type='number' id='id' name='id' class='d-none' value='".$array2['IdUsuario']."'>
                         <input type='hidden' name='tipo_usuario' value='1'>

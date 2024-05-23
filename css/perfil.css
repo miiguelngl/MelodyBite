@@ -118,10 +118,7 @@
 }
 .info-perfil{
     overflow-x: auto;
-}
-.info-perfil-overflow{
-    overflow-x: auto;
-    height: max-content;
+    height: 100%;
 }
 
 .info-perfil-overflow h5, .case-pedido h2{
@@ -158,4 +155,15 @@
     background-color: var(--secundario);
     border-radius: 20px; 
     border: 3px solid var(--principal); 
+}
+
+.organizacion a{
+    margin-left: 25px;
+    padding: 8px 12px;
+    background-color: var(--principal);
+    color: var(--secundario);
+    font-family: var(--oswald);
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 20px;
 }

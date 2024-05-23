@@ -62,6 +62,17 @@
                                 echo '<h5>Apellidos: <br><span>'.$usuario['Apellidos'].'</span></h5><hr>';
                                 echo '<h5>Correo: <br><span>'.$usuario['Correo'].'</span></h5><hr>';
                                 echo '<h5>Dirección: <br><span>'.$usuario['Direccion'].'</span></h5>';
+
+                                if ($usuario['Tipo_usuario'] == 2 || $usuario['Tipo_usuario'] == 1) {
+                                    echo '<hr><h5>Organización interna</h5>';
+                                    echo '<div class="organizacion">';
+                                        echo '<a href="gestionarBurgers.php">Cocina</a>';
+                                        echo '<a href="gestionarBurgers.php">Hamburguesas</a>';
+                                        if($usuario['Tipo_usuario'] == 1){
+                                            echo '<a href="darPermisos.php">Usuarios</a>';
+                                        }
+                                    echo '</div>';
+                                }
                             ?>
                         </div>
                     </div>
