@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-05-2024 a las 14:46:06
+-- Tiempo de generación: 29-05-2024 a las 08:44:59
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -58,6 +58,7 @@ CREATE TABLE `pedidos` (
   `ID_Pedido` int(11) NOT NULL,
   `ID_Usuario` int(11) NOT NULL,
   `Pedido` varchar(512) NOT NULL,
+  `Direccion` varchar(255) NOT NULL,
   `Estado` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -65,11 +66,9 @@ CREATE TABLE `pedidos` (
 -- Volcado de datos para la tabla `pedidos`
 --
 
-INSERT INTO `pedidos` (`ID_Pedido`, `ID_Usuario`, `Pedido`, `Estado`) VALUES
-(1, 8, '1, 2, 5, 2', 2),
-(2, 8, '2, 4, 6', 2),
-(3, 8, '3', 1),
-(7, 8, 'La Rockera, La Rockera, La Rockera', 0);
+INSERT INTO `pedidos` (`ID_Pedido`, `ID_Usuario`, `Pedido`, `Direccion`, `Estado`) VALUES
+(9, 8, 'La Rockera - {EXTRAS: Extra de salsa, Extra de queso, Que chorree [Extra salsa + Doble queso]}, The Classical - {EXTRAS: }, Hip-Hop Style - {EXTRAS: Extra de salsa, Extra de queso}', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 2),
+(10, 8, 'La Rockera - {EXTRAS: }, La Rockera - {EXTRAS: Extra de salsa, Extra de queso}, La Rockera - {EXTRAS: }', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 1);
 
 -- --------------------------------------------------------
 
@@ -94,7 +93,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`IdUsuario`, `Apodo`, `Nombre`, `Apellidos`, `Direccion`, `Correo`, `Contrasena`, `Tipo_usuario`) VALUES
 (8, 'miguelngl', 'Miguel Ángel', 'García', 'C/ Juan Fabregat 9', 'prueba@gmail.com', '$2y$10$7oSowzZ6cOxFnxzU62CIF.aKCQdxto.n0g5uTfKBatKjY2aYpNZtC', 1),
-(9, 'pablitoElMotos', 'Pablo', 'El Motorista', '', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', 0),
+(9, 'pablitoElMotos', 'Pablo', 'El Motorista', '', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', NULL),
 (10, 'pabloCocinero', 'Pablo', 'Cocinero', '', 'pablococinero@gmail.com', '$2y$10$da0gDXv9DnLgQxW6MGThnOBMCjpmtzBxOeUXtF4optzlIwdhywABS', 2),
 (11, 'rafeta', 'Rafa', 'Aaaaa', 'Tu madre', 'rafeta@gmail.com', '$2y$10$ODbM631rcn4OZFGyRoh4q.EBfmkr3VsgTYr4Xf8z4lDs6LzqjOLvG', 0);
 
@@ -135,7 +134,7 @@ ALTER TABLE `hamburguesas`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `ID_Pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID_Pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
