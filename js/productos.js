@@ -95,6 +95,7 @@ buttons.forEach(button => {
     button.addEventListener('click', function() {
         carroDesplegado.classList.add('active-2');
     });
+    button.addEventListener('click', botonContinuar);
 });
 
 // Al cargar la página, actualizar el carrito

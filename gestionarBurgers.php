@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/gestiones.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <script src="js/despliegueMenu.js" defer></script>
+    <script src="js/productos.js" defer></script>
 </head>
 <body>
     
@@ -34,7 +36,7 @@ if(isset($_SESSION["Usu"])){
     if($result->num_rows > 0){
         $array = $result->fetch_assoc();
         
-        if($array["Tipo_usuario"] == 1){
+        if($array["Tipo_usuario"] == 1 || $array["Tipo_usuario"] == 2){
             //CONTENIDO DEL ADMIN.PHP
 
             //MOSTRAR TODOS LOS USUARIO NO VALIDADAS

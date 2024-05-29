@@ -190,6 +190,7 @@
         border-radius: 0px 25px 25px 0px;
         justify-content: flex-start;
         min-height: 80vh;
+        max-height: 80vh;
         padding-bottom: 0px;
     }
     .lista-menu-perfil{

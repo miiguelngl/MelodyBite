@@ -123,10 +123,30 @@
                     <div class="info-perfil">
                         <div class="info-perfil-overflow">
                             <?php
-                                echo '<h5>Nombre: <br><span>'.$usuario['Nombre'].'</span></h5><hr>';
-                                echo '<h5>Apellidos: <br><span>'.$usuario['Apellidos'].'</span></h5><hr>';
-                                echo '<h5>Correo: <br><span>'.$usuario['Correo'].'</span></h5><hr>';
-                                echo '<h5>Dirección: <br><span>'.$usuario['Direccion'].'</span></h5>';
+                                echo '<form action="php/hacerPedido.php" method="post">';
+                                    echo '<label for="">Cambiar nombre</label>';
+                                    echo '<input type="text" name="nombre" value="'.$usuario['Nombre'].'">';
+                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
+                                echo '</form>';
+                                echo '<hr>';
+                                echo '<form action="php/hacerPedido.php" method="post">';
+                                    echo '<label for="">Cambiar apellidos</label>';
+                                    echo '<input type="text" name="apellidos" value="'.$usuario['Apellidos'].'">';
+                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
+                                echo '</form>';
+                                echo '<hr>';
+                                echo '<form action="php/hacerPedido.php" method="post">';
+                                    echo '<label for="">Cambiar dirección</label>';
+                                    echo '<input type="text" name="apellidos" value="'.$usuario['Direccion'].'">';
+                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
+                                echo '</form>';
+                                echo '<hr>';
+                                echo '<form action="php/hacerPedido.php" method="post">';
+                                    echo '<label for="">Cambiar contraseña</label>';
+                                    echo '<input type="password" name="contrasenya" value="">';
+                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
+                                echo '</form>';
+                                echo '<hr>';
                                 // $stmt->close();
                             ?>
                         </div>
