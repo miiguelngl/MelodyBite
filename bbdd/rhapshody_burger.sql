@@ -67,8 +67,8 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`ID_Pedido`, `ID_Usuario`, `Pedido`, `Direccion`, `Estado`) VALUES
-(9, 8, 'La Rockera - {EXTRAS: Extra de salsa, Extra de queso, Que chorree [Extra salsa + Doble queso]}, The Classical - {EXTRAS: }, Hip-Hop Style - {EXTRAS: Extra de salsa, Extra de queso}', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 2),
-(10, 8, 'La Rockera - {EXTRAS: }, La Rockera - {EXTRAS: Extra de salsa, Extra de queso}, La Rockera - {EXTRAS: }', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 1);
+(1, 1, 'La Rockera - {EXTRAS: Extra de salsa, Extra de queso, Que chorree [Extra salsa + Doble queso]}, The Classical - {EXTRAS: }, Hip-Hop Style - {EXTRAS: Extra de salsa, Extra de queso}', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 2),
+(2, 1, 'La Rockera - {EXTRAS: }, La Rockera - {EXTRAS: Extra de salsa, Extra de queso}, La Rockera - {EXTRAS: }', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 1);
 
 -- --------------------------------------------------------
 
@@ -92,10 +92,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`IdUsuario`, `Apodo`, `Nombre`, `Apellidos`, `Direccion`, `Correo`, `Contrasena`, `Tipo_usuario`) VALUES
-(8, 'miguelngl', 'Miguel Ángel', 'García', 'C/ Juan Fabregat 9', 'prueba@gmail.com', '$2y$10$7oSowzZ6cOxFnxzU62CIF.aKCQdxto.n0g5uTfKBatKjY2aYpNZtC', 1),
-(9, 'pablitoElMotos', 'Pablo', 'El Motorista', '', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', NULL),
-(10, 'pabloCocinero', 'Pablo', 'Cocinero', '', 'pablococinero@gmail.com', '$2y$10$da0gDXv9DnLgQxW6MGThnOBMCjpmtzBxOeUXtF4optzlIwdhywABS', 2),
-(11, 'rafeta', 'Rafa', 'Aaaaa', 'Tu madre', 'rafeta@gmail.com', '$2y$10$ODbM631rcn4OZFGyRoh4q.EBfmkr3VsgTYr4Xf8z4lDs6LzqjOLvG', 0);
+(1, 'miguelngl', 'Miguel Ángel', 'García', 'C/ Juan Fabregat 9', 'prueba@gmail.com', '$2y$10$7oSowzZ6cOxFnxzU62CIF.aKCQdxto.n0g5uTfKBatKjY2aYpNZtC', 1),
+(2, 'pablitoElMotos', 'Pablo', 'El Motorista', '', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', NULL),
+(3, 'pabloCocinero', 'Pablo', 'Cocinero', '', 'pablococinero@gmail.com', '$2y$10$da0gDXv9DnLgQxW6MGThnOBMCjpmtzBxOeUXtF4optzlIwdhywABS', 2),
+(4, 'rafeta', 'Rafa', 'Aaaaa', 'Tu madre', 'rafeta@gmail.com', '$2y$10$ODbM631rcn4OZFGyRoh4q.EBfmkr3VsgTYr4Xf8z4lDs6LzqjOLvG', 0);
 
 --
 -- Índices para tablas volcadas
@@ -134,13 +134,13 @@ ALTER TABLE `hamburguesas`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `ID_Pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID_Pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
