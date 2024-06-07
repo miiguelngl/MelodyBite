@@ -123,27 +123,31 @@
                     <div class="info-perfil">
                         <div class="info-perfil-overflow">
                             <?php
-                                echo '<form action="php/hacerPedido.php" method="post">';
-                                    echo '<label for="">Cambiar nombre</label>';
+                                echo '<form method="POST" action="php/cambiarDatos.php">';
+                                    echo '<label for="">Nombre:</label>';
                                     echo '<input type="text" name="nombre" value="'.$usuario['Nombre'].'">';
+                                    echo '<input type="number" name="tipo" value="1" style="display: none;">';
                                     echo '<input type="submit" class="cambiar" value="Cambiar">';
                                 echo '</form>';
                                 echo '<hr>';
-                                echo '<form action="php/hacerPedido.php" method="post">';
-                                    echo '<label for="">Cambiar apellidos</label>';
-                                    echo '<input type="text" name="apellidos" value="'.$usuario['Apellidos'].'">';
+                                echo '<form method="POST" action="php/cambiarDatos.php">';
+                                    echo '<label for="">Apellidos:</label>';
+                                    echo '<input type="text" name="apellido" value="'.$usuario['Apellidos'].'">';
+                                    echo '<input type="number" name="tipo" value="2" style="display: none;">';
                                     echo '<input type="submit" class="cambiar" value="Cambiar">';
                                 echo '</form>';
                                 echo '<hr>';
-                                echo '<form action="php/hacerPedido.php" method="post">';
-                                    echo '<label for="">Cambiar dirección</label>';
-                                    echo '<input type="text" name="apellidos" value="'.$usuario['Direccion'].'">';
+                                echo '<form method="POST" action="php/cambiarDatos.php">';
+                                    echo '<label for="">Dirección:</label>';
+                                    echo '<input type="text" name="direccion" value="'.$usuario['Direccion'].'">';
+                                    echo '<input type="number" name="tipo" value="3" style="display: none;">';
                                     echo '<input type="submit" class="cambiar" value="Cambiar">';
                                 echo '</form>';
                                 echo '<hr>';
-                                echo '<form action="php/hacerPedido.php" method="post">';
-                                    echo '<label for="">Cambiar contraseña</label>';
+                                echo '<form method="POST" action="php/cambiarDatos.php">';
+                                    echo '<label for="">Contraseña:</label>';
                                     echo '<input type="password" name="contrasenya" value="">';
+                                    echo '<input type="number" name="tipo" value="4" style="display: none;">';
                                     echo '<input type="submit" class="cambiar" value="Cambiar">';
                                 echo '</form>';
                                 echo '<hr>';

@@ -226,6 +226,10 @@ body{
     background-color: var(--secundario);
 }
 
+#frasePedido a{
+    color: var(--tercer);
+}
+
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
     .cerrar{

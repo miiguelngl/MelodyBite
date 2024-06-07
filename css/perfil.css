@@ -120,7 +120,7 @@
     height: 100%;
 }
 
-.info-perfil-overflow h5, .case-pedido h2{
+.info-perfil-overflow h5, .case-pedido h2, .case-cambiar-perfil form label{
     font-size: 1rem;
     line-height: 1.20;
     font-family: var(--oswald);
@@ -171,6 +171,18 @@
     width: fit-content;
     margin-bottom: 8px;
 }
+
+/* -- CAMBIAR DATOS -- */
+.case-cambiar-perfil form input{
+    border-radius: 5px;
+    margin-left: 12px;
+    padding: 4px;
+    font-family: var(--kanit);
+}
+.case-cambiar-perfil form{
+    margin-top: 12px;
+}
+
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 }

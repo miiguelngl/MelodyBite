@@ -189,7 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 contenidoPrincipalVentanaText.appendChild(botonHamburguesa);
             }else{
                 const frasePedido = document.createElement('p');
-                frasePedido.textContent = 'Registrate o inicia sesión para realizar un pedido.';
+                frasePedido.id = 'frasePedido';
+                frasePedido.innerHTML = '<a href="./formulario/Registro/signUp.html">Registrate</a> o <a href="./formulario/IniciarSesion/signIn.html">inicia sesión</a> para realizar un pedido.';
                 contenidoPrincipalVentanaText.appendChild(frasePedido);
             }
             contenidoPrincipalVentana.appendChild(contenidoPrincipalVentanaText);
