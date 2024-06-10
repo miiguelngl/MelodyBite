@@ -122,37 +122,37 @@
                     </div>
                     <div class="info-perfil">
                         <div class="info-perfil-overflow">
-                            <?php
-                                echo '<form method="POST" action="php/cambiarDatos.php">';
-                                    echo '<label for="">Nombre:</label>';
-                                    echo '<input type="text" name="nombre" value="'.$usuario['Nombre'].'">';
-                                    echo '<input type="number" name="tipo" value="1" style="display: none;">';
-                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
-                                echo '</form>';
-                                echo '<hr>';
-                                echo '<form method="POST" action="php/cambiarDatos.php">';
-                                    echo '<label for="">Apellidos:</label>';
-                                    echo '<input type="text" name="apellido" value="'.$usuario['Apellidos'].'">';
-                                    echo '<input type="number" name="tipo" value="2" style="display: none;">';
-                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
-                                echo '</form>';
-                                echo '<hr>';
-                                echo '<form method="POST" action="php/cambiarDatos.php">';
-                                    echo '<label for="">Dirección:</label>';
-                                    echo '<input type="text" name="direccion" value="'.$usuario['Direccion'].'">';
-                                    echo '<input type="number" name="tipo" value="3" style="display: none;">';
-                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
-                                echo '</form>';
-                                echo '<hr>';
-                                echo '<form method="POST" action="php/cambiarDatos.php">';
-                                    echo '<label for="">Contraseña:</label>';
-                                    echo '<input type="password" name="contrasenya" value="">';
-                                    echo '<input type="number" name="tipo" value="4" style="display: none;">';
-                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
-                                echo '</form>';
-                                echo '<hr>';
-                                // $stmt->close();
-                            ?>
+                        <?php
+                            echo '<form method="POST" action="php/cambiarDatos.php">';
+                            echo '<label for="nombre">Nombre:</label>';
+                            echo '<input type="text" id="nombre" name="nombre" value="'.$usuario['Nombre'].'">';
+                            echo '<input type="hidden" name="tipo" value="1">';
+                            echo '<input type="submit" class="cambiar" value="Cambiar">';
+                            echo '</form>';
+                            echo '<hr>';
+                            echo '<form method="POST" action="php/cambiarDatos.php">';
+                            echo '<label for="apellido">Apellidos:</label>';
+                            echo '<input type="text" id="apellido" name="apellido" value="'.$usuario['Apellidos'].'">';
+                            echo '<input type="hidden" name="tipo" value="2">';
+                            echo '<input type="submit" class="cambiar" value="Cambiar">';
+                            echo '</form>';
+                            echo '<hr>';
+                            echo '<form method="POST" action="php/cambiarDatos.php">';
+                            echo '<label for="direccion">Dirección:</label>';
+                            echo '<input type="text" id="direccion" name="direccion" value="'.$usuario['Direccion'].'">';
+                            echo '<input type="hidden" name="tipo" value="3">';
+                            echo '<input type="submit" class="cambiar" value="Cambiar">';
+                            echo '</form>';
+                            echo '<hr>';
+                            echo '<form method="POST" action="php/cambiarDatos.php">';
+                            echo '<label for="contrasenya">Contraseña:</label>';
+                            echo '<input type="password" id="contrasenya" name="contrasenya">';
+                            echo '<input type="hidden" name="tipo" value="4">';
+                            echo '<input type="submit" class="cambiar" value="Cambiar">';
+                            echo '</form>';
+                            echo '<hr>';
+                         ?>
+
                         </div>
                     </div>
                 </div>
