@@ -54,10 +54,8 @@ h4{
 table{
     margin-right: 10px;
 }
-.estado{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.estado form{
+    margin-bottom: 12px;
 }
 body{
     background-color: var(--principal);

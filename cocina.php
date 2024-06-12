@@ -49,7 +49,7 @@ if(isset($_SESSION["Usu"])){
             if($result2->num_rows > 0){
                 $array2 = $result2->fetch_assoc();
                 echo "<table>";
-                echo "<tr><th>Nº Pedido</th><th>Pedido</th><th>Dirección</th><th>Estado</th><th>Cambiar estado</th></tr>";
+                echo "<tr><th>Nº Pedido</th><th>Pedido</th><th>Estado</th><th>Cambiar estado</th></tr>";
                 foreach ($result2 as $pedido) {
                     echo "<tr>";
                     echo "<td>" . $pedido['ID_Pedido'] . "</td>";
@@ -81,7 +81,6 @@ if(isset($_SESSION["Usu"])){
                         }
                     echo "</td>";
 
-                    echo "<td>" . $pedido['Direccion'] . "</td>";
                     if($pedido['Estado'] == 0){
                         echo "<td>Oido cocina</td>";
                     }elseif($pedido['Estado'] == 1){
