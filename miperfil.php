@@ -81,33 +81,38 @@
                     <div class="titulo-perfil">
                         <h2>
                             <?php
-                                echo 'Pedidos realizados';
+                                if ($usuario['Tipo_usuario'] == 3) {
+                                    echo 'Pedidos para repartir';
+                                }else echo 'Pedidos realizados';
                             ?>
                         </h2>
                     </div>
                     <div class="info-perfil">
                         <div class="info-perfil-overflow">
                             <?php
-                                $consulta2 = "SELECT * FROM `Pedidos` WHERE `ID_Usuario` = ?";
+                                if ($usuario['Tipo_usuario'] != 3) {
+                                    $consulta2 = "SELECT * FROM `Pedidos` WHERE `ID_Usuario` = ?";
 
-                                $stmt = $conexion->prepare($consulta2);
-                                $stmt->bind_param("s", $usuario['IdUsuario']);
-                                $stmt->execute();
-        
-                                $resultado2 = $stmt->get_result();
-                                while($pedido = $resultado2->fetch_assoc()) {
-                                    echo '<div class="case-pedido">';
-                                    echo '<h2>Pedido número: '. $pedido['ID_Pedido'] .'</h2>';
-                                    if ($pedido['Estado'] == 0) {
-                                        echo '<h5>Estado del pedido: <br><span>Oido cocina - En preparación</span></h5><hr>';
-                                    }else if($pedido['Estado'] == 1){
-                                        echo '<h5>Estado del pedido: <br><span>En reparto</span></h5><hr>';
-                                    }else{
-                                        echo '<h5>Estado del pedido: <br><span>Entregado</span></h5><hr>';
+                                    $stmt = $conexion->prepare($consulta2);
+                                    $stmt->bind_param("s", $usuario['IdUsuario']);
+                                    $stmt->execute();
+            
+                                    $resultado2 = $stmt->get_result();
+                                    while($pedido = $resultado2->fetch_assoc()) {
+                                        echo '<div class="case-pedido">';
+                                        echo '<h2>Pedido número: '. $pedido['ID_Pedido'] .'</h2>';
+                                        if ($pedido['Estado'] == 0) {
+                                            echo '<h5>Estado del pedido: <br><span>Oido cocina - En preparación</span></h5><hr>';
+                                        }else if($pedido['Estado'] == 1){
+                                            echo '<h5>Estado del pedido: <br><span>En reparto</span></h5><hr>';
+                                        }else{
+                                            echo '<h5>Estado del pedido: <br><span>Entregado</span></h5><hr>';
+                                        }
+                                        echo '</div>';
                                     }
-                                    echo '</div>';
+                                }else{
+                                    
                                 }
-                                
                             ?>
                         </div>
                     </div>
@@ -122,37 +127,37 @@
                     </div>
                     <div class="info-perfil">
                         <div class="info-perfil-overflow">
-                        <?php
-                            echo '<form method="POST" action="php/cambiarDatos.php">';
-                            echo '<label for="nombre">Nombre:</label>';
-                            echo '<input type="text" id="nombre" name="nombre" value="'.$usuario['Nombre'].'">';
-                            echo '<input type="hidden" name="tipo" value="1">';
-                            echo '<input type="submit" class="cambiar" value="Cambiar">';
-                            echo '</form>';
-                            echo '<hr>';
-                            echo '<form method="POST" action="php/cambiarDatos.php">';
-                            echo '<label for="apellido">Apellidos:</label>';
-                            echo '<input type="text" id="apellido" name="apellido" value="'.$usuario['Apellidos'].'">';
-                            echo '<input type="hidden" name="tipo" value="2">';
-                            echo '<input type="submit" class="cambiar" value="Cambiar">';
-                            echo '</form>';
-                            echo '<hr>';
-                            echo '<form method="POST" action="php/cambiarDatos.php">';
-                            echo '<label for="direccion">Dirección:</label>';
-                            echo '<input type="text" id="direccion" name="direccion" value="'.$usuario['Direccion'].'">';
-                            echo '<input type="hidden" name="tipo" value="3">';
-                            echo '<input type="submit" class="cambiar" value="Cambiar">';
-                            echo '</form>';
-                            echo '<hr>';
-                            echo '<form method="POST" action="php/cambiarDatos.php">';
-                            echo '<label for="contrasenya">Contraseña:</label>';
-                            echo '<input type="password" id="contrasenya" name="contrasenya">';
-                            echo '<input type="hidden" name="tipo" value="4">';
-                            echo '<input type="submit" class="cambiar" value="Cambiar">';
-                            echo '</form>';
-                            echo '<hr>';
-                         ?>
-
+                            <?php
+                                echo '<form method="POST" action="php/cambiarDatos.php">';
+                                    echo '<label for="">Nombre:</label>';
+                                    echo '<input type="text" name="nombre" value="'.$usuario['Nombre'].'">';
+                                    echo '<input type="number" name="tipo" value="1" style="display: none;">';
+                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
+                                echo '</form>';
+                                echo '<hr>';
+                                echo '<form method="POST" action="php/cambiarDatos.php">';
+                                    echo '<label for="">Apellidos:</label>';
+                                    echo '<input type="text" name="apellido" value="'.$usuario['Apellidos'].'">';
+                                    echo '<input type="number" name="tipo" value="2" style="display: none;">';
+                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
+                                echo '</form>';
+                                echo '<hr>';
+                                echo '<form method="POST" action="php/cambiarDatos.php">';
+                                    echo '<label for="">Dirección:</label>';
+                                    echo '<input type="text" name="direccion" value="'.$usuario['Direccion'].'">';
+                                    echo '<input type="number" name="tipo" value="3" style="display: none;">';
+                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
+                                echo '</form>';
+                                echo '<hr>';
+                                echo '<form method="POST" action="php/cambiarDatos.php">';
+                                    echo '<label for="">Contraseña:</label>';
+                                    echo '<input type="password" name="contrasenya" value="">';
+                                    echo '<input type="number" name="tipo" value="4" style="display: none;">';
+                                    echo '<input type="submit" class="cambiar" value="Cambiar">';
+                                echo '</form>';
+                                echo '<hr>';
+                                // $stmt->close();
+                            ?>
                         </div>
                     </div>
                 </div>

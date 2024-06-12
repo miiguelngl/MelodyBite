@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2024 a las 08:44:59
+-- Tiempo de generación: 12-06-2024 a las 18:56:36
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -59,16 +59,36 @@ CREATE TABLE `pedidos` (
   `ID_Usuario` int(11) NOT NULL,
   `Pedido` varchar(512) NOT NULL,
   `Direccion` varchar(255) NOT NULL,
-  `Estado` int(11) NOT NULL DEFAULT 0
+  `Estado` int(11) NOT NULL DEFAULT 0,
+  `ID_Repartidor` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pedidos`
 --
 
-INSERT INTO `pedidos` (`ID_Pedido`, `ID_Usuario`, `Pedido`, `Direccion`, `Estado`) VALUES
-(1, 1, 'La Rockera - {EXTRAS: Extra de salsa, Extra de queso, Que chorree [Extra salsa + Doble queso]}, The Classical - {EXTRAS: }, Hip-Hop Style - {EXTRAS: Extra de salsa, Extra de queso}', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 2),
-(2, 1, 'La Rockera - {EXTRAS: }, La Rockera - {EXTRAS: Extra de salsa, Extra de queso}, La Rockera - {EXTRAS: }', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 1);
+INSERT INTO `pedidos` (`ID_Pedido`, `ID_Usuario`, `Pedido`, `Direccion`, `Estado`, `ID_Repartidor`) VALUES
+(1, 1, 'La Rockera - {EXTRAS: Extra de salsa, Extra de queso, Que chorree [Extra salsa + Doble queso]}, The Classical - {EXTRAS: }, Hip-Hop Style - {EXTRAS: Extra de salsa, Extra de queso}', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 2, NULL),
+(2, 1, 'La Rockera - {EXTRAS: }, La Rockera - {EXTRAS: Extra de salsa, Extra de queso}, La Rockera - {EXTRAS: }', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 1, NULL),
+(3, 1, 'Funky Burger - {EXTRAS: Extra de salsa, Que chorree [Extra salsa + Doble queso]}, La Rockera - {EXTRAS: Extra de queso}', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `repartidores`
+--
+
+CREATE TABLE `repartidores` (
+  `ID_Repartidor` int(11) NOT NULL,
+  `ID_Usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `repartidores`
+--
+
+INSERT INTO `repartidores` (`ID_Repartidor`, `ID_Usuario`) VALUES
+(1, 5);
 
 -- --------------------------------------------------------
 
@@ -92,10 +112,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`IdUsuario`, `Apodo`, `Nombre`, `Apellidos`, `Direccion`, `Correo`, `Contrasena`, `Tipo_usuario`) VALUES
-(1, 'miguelngl', 'Miguel Ángel', 'García', 'C/ Juan Fabregat 9', 'prueba@gmail.com', '$2y$10$7oSowzZ6cOxFnxzU62CIF.aKCQdxto.n0g5uTfKBatKjY2aYpNZtC', 1),
-(2, 'pablitoElMotos', 'Pablo', 'El Motorista', '', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', NULL),
+(1, 'miguelngl', 'Miguel Ángel', 'García Pérez', 'C/ Juan Fabregat 9', 'prueba@gmail.com', '$2y$10$Up80ieTlU3quu9t9K6AReOEcINU/x0ZqI4mCix/guYNacOFDLqtVG', 1),
+(2, 'pablitoElMotos', 'Pablo', 'El Motorista', '', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', 0),
 (3, 'pabloCocinero', 'Pablo', 'Cocinero', '', 'pablococinero@gmail.com', '$2y$10$da0gDXv9DnLgQxW6MGThnOBMCjpmtzBxOeUXtF4optzlIwdhywABS', 2),
-(4, 'rafeta', 'Rafa', 'Aaaaa', 'Tu madre', 'rafeta@gmail.com', '$2y$10$ODbM631rcn4OZFGyRoh4q.EBfmkr3VsgTYr4Xf8z4lDs6LzqjOLvG', 0);
+(4, 'rafeta', 'Rafa', 'Aaaaa', 'Tu madre', 'rafeta@gmail.com', '$2y$10$ODbM631rcn4OZFGyRoh4q.EBfmkr3VsgTYr4Xf8z4lDs6LzqjOLvG', 0),
+(5, 'pabloRepartidor', 'Pablo', 'El Repartidor', 'C/ Machado Mil', '04mangel@gmail.com', '$2y$10$XTrjAHFCK17UF0dQvtqznO99AO4hoqDsVgLh7NqkIYZSRvpwQ329K', 3);
 
 --
 -- Índices para tablas volcadas
@@ -112,7 +133,15 @@ ALTER TABLE `hamburguesas`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`ID_Pedido`),
-  ADD KEY `ID del usuario` (`ID_Usuario`);
+  ADD KEY `ID del usuario` (`ID_Usuario`),
+  ADD KEY `fk_pedidos_repartidores` (`ID_Repartidor`);
+
+--
+-- Indices de la tabla `repartidores`
+--
+ALTER TABLE `repartidores`
+  ADD PRIMARY KEY (`ID_Repartidor`),
+  ADD KEY `ID_Usuario` (`ID_Usuario`);
 
 --
 -- Indices de la tabla `usuario`
@@ -134,13 +163,19 @@ ALTER TABLE `hamburguesas`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `ID_Pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_Pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `repartidores`
+--
+ALTER TABLE `repartidores`
+  MODIFY `ID_Repartidor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
@@ -150,7 +185,14 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  ADD CONSTRAINT `ID del usuario` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`IdUsuario`);
+  ADD CONSTRAINT `ID del usuario` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`IdUsuario`),
+  ADD CONSTRAINT `fk_pedidos_repartidores` FOREIGN KEY (`ID_Repartidor`) REFERENCES `repartidores` (`ID_Repartidor`);
+
+--
+-- Filtros para la tabla `repartidores`
+--
+ALTER TABLE `repartidores`
+  ADD CONSTRAINT `fk_repartidores_usuario` FOREIGN KEY (`ID_Usuario`) REFERENCES `usuario` (`IdUsuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
