@@ -73,6 +73,12 @@
                                         }
                                     echo '</div>';
                                 }
+                                if ($usuario['Tipo_usuario'] == 3){
+                                    echo '<hr><h5>Organización interna</h5>';
+                                    echo '<div class="organizacion">';
+                                        echo '<a href="repartos.php">Repartos</a>';
+                                    echo '</div>';
+                                }
                             ?>
                         </div>
                     </div>

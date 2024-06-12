@@ -99,6 +99,11 @@ if(isset($_SESSION["Usu"])){
                         <input type='hidden' name='estado' value='1'>
                         <input type='submit' id='enviar_cocinero' class='btn btn-success' value='En reparto'>
                     </form>
+                    <form action='php/cambiarPedido.php' method='post' enctype='multipart/form-data'>
+                        <input type='number' id='id' name='id' class='d-none' value='".$pedido['ID_Pedido']."'>
+                        <input type='hidden' name='estado' value='2'>
+                        <input type='submit' id='enviar_cocinero' class='btn btn-success' value='Entregado'>
+                    </form>
                     </td>";
                     echo "</tr>";
                 }

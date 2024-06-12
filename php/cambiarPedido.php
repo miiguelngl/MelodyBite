@@ -19,9 +19,44 @@
             $stmt->bind_param("ss", $estado, $id);
             $stmt->execute();
 
+            if ($estado == 1) {
+                asignarRepartidor($id);
+            }
+
             header("Location: ../cocina.php");
         }
     }else{
         header("Location: ../IniciarSesion/signIn.html");
+    }
+
+    function asignarRepartidor($idPedido){
+        global $conexion; // Usa la conexión global
+
+        // Obtener todos los IDs de repartidores
+        $consulta = "SELECT ID_Repartidor FROM repartidores";
+        $resultado = $conexion->query($consulta);
+
+        if ($resultado->num_rows > 0) {
+            // Recoger todos los IDs de repartidores en un array
+            $repartidores = [];
+            while ($row = $resultado->fetch_assoc()) {
+                $repartidores[] = $row['ID_Repartidor'];
+            }
+
+            // Seleccionar un ID de repartidor al azar
+            $repartidorAleatorio = $repartidores[array_rand($repartidores)];
+
+            // Asignar el repartidor al pedido
+            $consultaUpdate = "UPDATE pedidos SET ID_Repartidor = ? WHERE ID_Pedido = ?";
+            $stmt = $conexion->prepare($consultaUpdate);
+            $stmt->bind_param("ii", $repartidorAleatorio, $idPedido);
+            $stmt->execute();
+            $stmt->close();
+            
+        } else {
+            echo "No hay repartidores disponibles.";
+        }
+
+        $resultado->close();
     }
 ?>

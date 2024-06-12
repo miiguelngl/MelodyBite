@@ -55,8 +55,10 @@ if(isset($_SESSION["Usu"])){
                         echo "Cliente</td>";
                     } elseif($array2['Tipo_usuario'] == 1){
                         echo "Administrador</td>";
-                    } else {
+                    } elseif($array2['Tipo_usuario'] == 2) {
                         echo "Cocinero</td>";
+                    }else{
+                        echo "Repartidor</td>";
                     }
                     echo "<td class='estado'>
                     <form action='php/darUsuario.php' method='post' enctype='multipart/form-data'>
@@ -68,6 +70,11 @@ if(isset($_SESSION["Usu"])){
                         <input type='number' id='id' name='id' class='d-none' value='".$array2['IdUsuario']."'>
                         <input type='hidden' name='tipo_usuario' value='2'>
                         <input type='submit' id='enviar_cocinero' class='btn btn-success' value='Dar Cocinero'>
+                    </form>
+                    <form action='php/darUsuario.php' method='post' enctype='multipart/form-data'>
+                        <input type='number' id='id' name='id' class='d-none' value='".$array2['IdUsuario']."'>
+                        <input type='hidden' name='tipo_usuario' value='3'>
+                        <input type='submit' id='enviar_cocinero' class='btn btn-success' value='Dar Repartidor'>
                     </form>
                     <form action='php/darUsuario.php' method='post' enctype='multipart/form-data'>
                         <input type='number' id='id' name='id' class='d-none' value='".$array2['IdUsuario']."'>

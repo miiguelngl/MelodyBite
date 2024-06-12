@@ -34,9 +34,9 @@
             $idUsuario = $fila['IdUsuario'];
     
             // Preparar la inserción del pedido
-            $subida = "INSERT INTO `Pedidos` (ID_Usuario, Pedido, Direccion, Estado) VALUES (?, ?, ?, 0)";
+            $subida = "INSERT INTO `Pedidos` (ID_Usuario, Nombre_Cliente, Pedido, Direccion, Estado) VALUES (?, ?, ?, ?, 0)";
             $stmt = $conexion->prepare($subida);
-            $stmt->bind_param("iss", $idUsuario, $burgers, $direccionEnt);
+            $stmt->bind_param("isss", $idUsuario, $nombreCliente, $burgers, $direccionEnt);
             $stmt->execute();
     
             // Redireccionar a la página de confirmación
