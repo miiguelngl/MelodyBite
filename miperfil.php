@@ -15,7 +15,7 @@
 </head>
 <body>
     <?php
-        include './php/header.php';
+        include './php/header.php';  
     ?>
     <main>
         <div class="case">
@@ -33,9 +33,8 @@
                 <div class="case-datos-perfil active">
                     <?php
                         include 'php/conexion.php';
-                        // session_start();
                         if (!isset($_SESSION['Usu'])) {
-                            header("Location: ./index.php");
+                            header("Location: index.php");
                         }
                         $username = $_SESSION['Usu'];
                         $consulta = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
@@ -118,7 +117,37 @@
                                         echo '</div>';
                                     }
                                 }else{
-                                    
+                                    // Suponiendo que ya tienes la conexión a la base de datos en $conexion
+                                    $consulta2 = "SELECT * FROM `Repartidores` WHERE `ID_Usuario` = ?";
+
+                                    $stmt = $conexion->prepare($consulta2);
+                                    $stmt->bind_param("i", $usuario['IdUsuario']);
+                                    $stmt->execute();
+
+                                    $resultado2 = $stmt->get_result();
+                                    $repartidor = $resultado2->fetch_assoc();
+
+                                    if ($repartidor) {
+                                        $consulta3 = "SELECT * FROM `Pedidos` WHERE `ID_Repartidor` = ?";
+
+                                        $stmt2 = $conexion->prepare($consulta3);
+                                        $stmt2->bind_param("i", $repartidor['ID_Repartidor']); // Cambié 's' a 'i' porque ID_Repartidor parece ser un entero
+                                        $stmt2->execute();
+
+                                        $resultado3 = $stmt2->get_result();
+                                        while ($pedido = $resultado3->fetch_assoc()) {
+                                            echo '<div class="case-pedido">';
+                                            echo '<h2>Pedido número: '. $pedido['ID_Pedido'] .'</h2>';
+                                            if ($pedido['Estado'] == 1) {
+                                                echo '<h5>Estado del pedido: <br><span>En reparto</span></h5><hr>';
+                                            } else {
+                                                echo '<h5>Estado del pedido: <br><span>Entregado</span></h5><hr>';
+                                            }
+                                            echo '</div>';
+                                        }
+                                    } else {
+                                        echo 'No se encontró el repartidor.';
+                                    }
                                 }
                             ?>
                         </div>
