@@ -70,6 +70,7 @@
                                         echo '<a href="gestionarBurgers.php">Hamburguesas</a>';
                                         if($usuario['Tipo_usuario'] == 1){
                                             echo '<a href="darPermisos.php">Usuarios</a>';
+                                            echo '<a href="cs_cocina.php">Todos los pedidos</a>';
                                         }
                                     echo '</div>';
                                 }

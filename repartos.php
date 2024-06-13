@@ -25,6 +25,7 @@ session_start();
 include './php/header.php';
 if(isset($_SESSION["Usu"])){
     $idUsu = $_SESSION["Usu"];
+    
     //Comprobar que la sesion iniciada sea Admin
     $consulta1 = "SELECT * FROM `Usuario` WHERE `Apodo` =  ?";
     
@@ -34,16 +35,25 @@ if(isset($_SESSION["Usu"])){
     $result = $stmt->get_result();
 
     if($result->num_rows > 0){
-        $array = $result->fetch_assoc();
+        $usuario = $result->fetch_assoc();
         
-        if($array["Tipo_usuario"] == 1 || $array["Tipo_usuario"] == 3){
+        if($usuario["Tipo_usuario"] == 1 || $usuario["Tipo_usuario"] == 3){
             //CONTENIDO DEL ADMIN.PHP
+
+            $consulta3 = "SELECT * FROM `Repartidores` WHERE `ID_Usuario` =  ?";
+    
+            $stmt3 = $conexion->prepare($consulta3);
+            $stmt3->bind_param("i", $usuario["IdUsuario"]);
+            $stmt3->execute();
+            $result3 = $stmt3->get_result();
+            $repartidor = $result3->fetch_assoc();
 
             //MOSTRAR TODOS LOS USUARIO NO VALIDADAS
 
-            $consulta2 = "SELECT * FROM `Pedidos`";
+            $consulta2 = "SELECT * FROM `Pedidos` WHERE `ID_Repartidor` = ?";
 
             $stmt2 = $conexion->prepare($consulta2);
+            $stmt2->bind_param("i", $repartidor["ID_Repartidor"]);
             $stmt2->execute();
             $result2 = $stmt2->get_result();
             if($result2->num_rows > 0){

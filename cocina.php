@@ -51,56 +51,58 @@ if(isset($_SESSION["Usu"])){
                 echo "<table>";
                 echo "<tr><th>Nº Pedido</th><th>Pedido</th><th>Estado</th><th>Cambiar estado</th></tr>";
                 foreach ($result2 as $pedido) {
-                    echo "<tr>";
-                    echo "<td>" . $pedido['ID_Pedido'] . "</td>";
-                    echo "<td>";
-                        $burgers = explode("}, ", $pedido['Pedido']);
-
-                        if (end($burgers) !== "") {
-                            $burgers[count($burgers) - 1] .= "}";
-                        }
-
-                        foreach ($burgers as $burger) {
-                            $parts = explode(" - {EXTRAS: ", $burger);
-
-                            if (count($parts) == 2) {
-                                $name = $parts[0];
-                                $extras = rtrim($parts[1], '}');
-                            } else {
-                                $name = $burger;
-                                $extras = '';
-                            }
-
-                            echo "Hamburguesa: " . $name . "<br>";
-
-                            if (!empty($extras)) {
-                                echo "Extras: " . $extras . "<br><br>";
-                            } else {
-                                echo "Extras: Ninguno<br><br>";
-                            }
-                        }
-                    echo "</td>";
-
                     if($pedido['Estado'] == 0){
-                        echo "<td>Oido cocina</td>";
-                    }elseif($pedido['Estado'] == 1){
-                        echo "<td>En reparto</td>";
-                    }else{
-                        echo "<td>Entregado</td>";
-                    };
-                    echo "<td class='estado'>
-                    <form action='php/cambiarPedido.php' method='post' enctype='multipart/form-data'>
-                        <input type='number' id='id' name='id' class='d-none' value='".$pedido['ID_Pedido']."'>
-                        <input type='hidden' name='estado' value='0'>
-                        <input type='submit' id='enviar_admin' class='btn btn-success' value='En cocina'>
-                    </form>
-                    <form action='php/cambiarPedido.php' method='post' enctype='multipart/form-data'>
-                        <input type='number' id='id' name='id' class='d-none' value='".$pedido['ID_Pedido']."'>
-                        <input type='hidden' name='estado' value='1'>
-                        <input type='submit' id='enviar_cocinero' class='btn btn-success' value='En reparto'>
-                    </form>
-                    </td>";
-                    echo "</tr>";
+                        echo "<tr>";
+                        echo "<td>" . $pedido['ID_Pedido'] . "</td>";
+                        echo "<td>";
+                            $burgers = explode("}, ", $pedido['Pedido']);
+
+                            if (end($burgers) !== "") {
+                                $burgers[count($burgers) - 1] .= "}";
+                            }
+
+                            foreach ($burgers as $burger) {
+                                $parts = explode(" - {EXTRAS: ", $burger);
+
+                                if (count($parts) == 2) {
+                                    $name = $parts[0];
+                                    $extras = rtrim($parts[1], '}');
+                                } else {
+                                    $name = $burger;
+                                    $extras = '';
+                                }
+
+                                echo "Hamburguesa: " . $name . "<br>";
+
+                                if (!empty($extras)) {
+                                    echo "Extras: " . $extras . "<br><br>";
+                                } else {
+                                    echo "Extras: Ninguno<br><br>";
+                                }
+                            }
+                        echo "</td>";
+
+                        if($pedido['Estado'] == 0){
+                            echo "<td>Oido cocina</td>";
+                        }elseif($pedido['Estado'] == 1){
+                            echo "<td>En reparto</td>";
+                        }else{
+                            echo "<td>Entregado</td>";
+                        };
+                        echo "<td class='estado'>
+                        <form action='php/cambiarPedido.php' method='post' enctype='multipart/form-data'>
+                            <input type='number' id='id' name='id' class='d-none' value='".$pedido['ID_Pedido']."'>
+                            <input type='hidden' name='estado' value='0'>
+                            <input type='submit' id='enviar_admin' class='btn btn-success' value='En cocina'>
+                        </form>
+                        <form action='php/cambiarPedido.php' method='post' enctype='multipart/form-data'>
+                            <input type='number' id='id' name='id' class='d-none' value='".$pedido['ID_Pedido']."'>
+                            <input type='hidden' name='estado' value='1'>
+                            <input type='submit' id='enviar_cocinero' class='btn btn-success' value='En reparto'>
+                        </form>
+                        </td>";
+                        echo "</tr>";
+                    }
                 }
                 echo "</table>";
                 echo '<nav class="submenu"><a href="miperfil.php">Volver</a>';

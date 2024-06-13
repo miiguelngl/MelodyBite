@@ -36,7 +36,7 @@ if(isset($_SESSION["Usu"])){
     if($result->num_rows > 0){
         $array = $result->fetch_assoc();
         
-        if($array["Tipo_usuario"] == 1 || $array["Tipo_usuario"] == 2){
+        if($array["Tipo_usuario"] == 1){
             //CONTENIDO DEL ADMIN.PHP
 
             //MOSTRAR TODOS LOS USUARIO NO VALIDADAS
