@@ -49,10 +49,33 @@ if(isset($_SESSION["Usu"])){
             if($result2->num_rows > 0){
                 $array2 = $result2->fetch_assoc();
                 echo "<table>";
-                echo "<tr><th>Nº Pedido</th><th>Pedido</th><th>Estado</th><th>Cambiar estado</th></tr>";
+                echo "<tr><th>Nº Pedido</th><th>Repartidor</th><th>Pedido</th><th>Estado</th><th>Cambiar estado</th></tr>";
                 foreach ($result2 as $pedido) {
                     echo "<tr>";
                     echo "<td>" . $pedido['ID_Pedido'] . "</td>";
+                    if($pedido['ID_Repartidor'] == NULL || $pedido['ID_Repartidor'] == ""){
+                        echo "<td>Repartidor no asignado</td>";
+                    }else{
+                        $consultaRep = "SELECT * FROM `Repartidores` WHERE `ID_Repartidor` = ?";
+
+                        $stmt3 = $conexion->prepare($consultaRep);
+                        $stmt3->bind_param("i", $pedido['ID_Repartidor']);
+                        $stmt3->execute();
+
+                        $resultado3 = $stmt3->get_result();
+                        $repartidor = $resultado3->fetch_assoc();
+
+                        $consultaNombreRep = "SELECT * FROM `Usuario` WHERE `IdUsuario` =  ?";
+
+                        $stmt4 = $conexion->prepare($consultaNombreRep);
+                        $stmt4->bind_param("i", $repartidor['ID_Usuario']);
+                        $stmt4->execute();
+
+                        $resultado4 = $stmt4->get_result();
+                        $datosRepartidor = $resultado4->fetch_assoc();
+
+                        echo "<td>" . $datosRepartidor['Nombre'] . "</td>";
+                    }
                     echo "<td>";
                         $burgers = explode("}, ", $pedido['Pedido']);
 
