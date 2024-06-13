@@ -83,7 +83,6 @@
                     <ul class="menu">
                         <li><a href="index.php">Home</a></li>
                         <li><a href="carta.php">Carta</a></li>
-                        <li><a href="">Historia</a></li>
                         <li><a href="contacto.php">Contacto</a></li>
                     </ul>
                     <div class="social-media">

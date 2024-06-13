@@ -31,15 +31,15 @@ p{
 #video-slider h2{
     font-size: 72px;
     margin: 0px;
-
 }
 #video-slider-frase{
     position: absolute;
     bottom: 20%;
-    left: 10vh;
     height: 0px;
     z-index: 2;
+    text-align: center;
 }
+
 #capa{
     position: absolute;
     width: 100%;
@@ -86,7 +86,7 @@ p{
     height: auto;
     background-color: var(--principal);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     padding: 50px 0px;
 }
@@ -95,16 +95,15 @@ p{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: auto;
-    width: 35%;
+    height: 270px;
+    width: 90%;
     border-radius: 0px 10px 10px 0px;
 }
 .sobre-nosotros-contenido{
-    width: 64%;
     padding: 32px;
 }
 .sobre-nosotros-contenido h2{
-    font-size: 58px;
+    font-size: 46px;
     margin-top: 0px;
 }
 .sobre-nosotros-contenido p{
@@ -128,6 +127,7 @@ p{
     margin: 0px;
     font-size: 38px;
     margin-bottom: 24px;
+    text-align: center;
 }
 .carta a{
     color: var(--letra3);
@@ -148,24 +148,23 @@ p{
 .local{
     padding: 5%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 350px;
     width: 100%;
 }
 #local-img{
     position: relative;
-    width:40%;
 }
+
 #local-img img{
-    border-radius: 50% 0% 0% 40%;
+    border-radius: 50% 0% 0% 50%;
 }
 .local-info{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 40%;
+    width: 90%;
 }
 .local-info h2{
     font-size: 42px;
@@ -174,15 +173,57 @@ p{
 .local-info p{
     font-size: 18px;
     font-family: var(--kanit);
+    padding-right: 24px;
 }
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
-
+    #video-slider-frase h2{
+        font-size: 56px;
+    }
+    #local-img img{
+        height: 400px;
+    }
 }
 @media only screen and (min-width: 601px) and (max-width: 960px){
 
 }
 
 @media only screen and (min-width: 960px){
+    #video-slider-frase{
+        text-align: left;
+    }
+    #video-slider h2{
+        font-size: 72px;
+        margin: 0px;
+    }
 
+    .sobre-nosotros{
+        flex-direction: row;
+    }
+    #sobre-nosotros-img{
+        height: auto;
+        width: 35%;
+    }
+    .sobre-nosotros-contenido{
+        width: 64%;
+    }
+
+    .sobre-nosotros-contenido h2{
+        font-size: 58px;
+        margin-top: 0px;
+    }
+
+    .local{
+        flex-direction: row;
+        height: 350px;
+    }
+    .local-info{
+        width: 40%;
+    }
+    .local-info p{
+        padding-right: 0px;
+    }
+    #local-img{
+        width:40%;
+    }
 }
