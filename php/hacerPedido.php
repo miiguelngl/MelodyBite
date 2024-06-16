@@ -23,7 +23,7 @@
         $us = $_SESSION['Usu'];
     
         // Consulta para obtener el IdUsuario
-        $consulta1 = "SELECT `IdUsuario` FROM `Usuario` WHERE `Apodo` = ?";
+        $consulta1 = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
         $stmt = $conexion->prepare($consulta1);
         $stmt->bind_param("s", $us);
         $stmt->execute();
@@ -38,6 +38,9 @@
             $stmt = $conexion->prepare($subida);
             $stmt->bind_param("isss", $idUsuario, $nombreCliente, $burgers, $direccionEnt);
             $stmt->execute();
+
+            // Enviar email
+            enviarMail($fila['Correo'], $nombreCliente);
     
             // Redireccionar a la página de confirmación
             header("Location: ../formulario/confirmacionPedido.html");
@@ -54,47 +57,47 @@
     }
 
 
-    // use PHPMailer\PHPMailer\PHPMailer;
-    // use PHPMailer\PHPMailer\Exception;
-    
-    // function enviarMail($nombre, $correo, $nombreCliente, $direccion, $cp){
-    //     //Carga de las clases necesarias
-    //     require '../../mail/PHPMailer/src/Exception.php';
-    //     require '../../mail/PHPMailer/src/PHPMailer.php';
-    //     require '../../mail/PHPMailer/src/SMTP.php';
-    
-    //     //Crear una instancia. Con true permitimos excepciones
-    //     $mail = new PHPMailer(true);
-    
-    //     try {
-    //         //Valores dependientes del servidor que utilizamos
-    //         $mail->isSMTP();                                           //Para usaar SMTP
-    //         $mail->Host       = 'smtp-mail.outlook.com';                     //Nuestro servidor SMTMP smtp.gmail.com en caso de usar gmail
-    //         $mail->SMTPAuth   = true;    
-    //         $mail->Username   = 'opalservice@outlook.es';             
-    //         $mail->Password   = 'hmqmvhzqifmwjvls';    
-    //         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    //         $mail->Port = 587;
-    //         //Remitente
-    //         $mail->setFrom('opalservice@outlook.es', 'Opal');
-    //         //Receptores. Podemos añadir más de uno. El segundo argumento es opcional, es el nombre
-    //         $mail->addAddress($correo, $nombre);     //Add a recipient
-    //         //Contenido
-    //         //Si enviamos HTML
-    //         $mail->isHTML(true);    
-    //         $mail->CharSet = "UTF8";    
-    //         //Asunto
-    //         $mail->Subject = 'Compra realizada';
-    //         //Conteido HTML
-    //         $mail->Body    = '<h3>¡Hola '. $nombre .', tu compra ha sido realizada correctamente!</h3><h4>Tu pedido será entregado por el vendedor lo antes posible.<br>Gracias por confiar en Opal.</h4><h4>Datos de la entrega</h4><p>Comprador: '. $nombreCliente .'<br>Dirección: '. $direccion .'<br>Código postal: '. $cp .'</p>';
-    //         //Contenido alternativo en texto simple
-    //         $mail->AltBody = '¡Hola '. $nombre .', tu compra ha sido realizada correctamente! Tu pedido será entregado por el vendedor lo antes posible.<br>Gracias por confiar en Opal.';
-    //         //Enviar correo
-    //         $mail->send();
-    //         echo 'El mensaje se ha enviado con exito';
-    //     } catch (Exception $e) {
-    //         echo "El mensaje no se ha enviado: {$mail->ErrorInfo}";
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
+    function enviarMail($correo, $nombre){
+        //Carga de las clases necesarias
+        require '../mail/PHPMailer/src/Exception.php';
+        require '../mail/PHPMailer/src/PHPMailer.php';
+        require '../mail/PHPMailer/src/SMTP.php';
+
+        //Crear una instancia. Con true permitimos excepciones
+        $mail = new PHPMailer(true);
+
+        try {
+            //Valores dependientes del servidor que utilizamos
+            $mail->isSMTP();                                           //Para usaar SMTP
+            $mail->Host       = 'smtp-mail.outlook.com';                     //Nuestro servidor SMTMP smtp.gmail.com en caso de usar gmail
+            $mail->SMTPAuth   = true;    
+            $mail->Username   = 'rhapsodysburgers@outlook.es';             
+            $mail->Password   = 'hrvghyjybswnfche';    
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
+            //Remitente
+            $mail->setFrom('rhapsodysburgers@outlook.es', 'Rhapsody´s Burgers');
+            //Receptores. Podemos añadir más de uno. El segundo argumento es opcional, es el nombre
+            $mail->addAddress($correo, $nombre);     //Add a recipient
+            //Contenido
+            //Si enviamos HTML
+            $mail->isHTML(true);    
+            $mail->CharSet = "UTF8";    
+            //Asunto
+            $mail->Subject = '¡Tu bocado está más cerca!';
+            //Conteido HTML
+            $mail->Body    = '<h3>¡Hola '. $nombre .', tu pedido está ya en cocina!</h3><br><p>Puedes seguir el proceso del pedido en tu perfil.</p>';
+            //Contenido alternativo en texto simple
+            $mail->AltBody = '¡Hola '. $nombre .', tu cuenta a sido creado correctamente. Ahora podras disfrutar de todos los servicios que ofrecemos';
+            //Enviar correo
+            $mail->send();
+            echo 'El mensaje se ha enviado con exito';
+        } catch (Exception $e) {
+            echo "El mensaje no se ha enviado: {$mail->ErrorInfo}";
             
-    //     }
-    // }
+        }
+    }
 ?>

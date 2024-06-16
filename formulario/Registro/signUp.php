@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         if ($conexion->query($consulta) === TRUE) {
             echo "Datos insertados correctamente";
             $_SESSION["Usu"] = $usuario;
-            // enviarMail($email, $nombre);
+            enviarMail($email, $nombre);
             header("Location: ../confirmacionCuenta.html");
             exit();
         } else {
@@ -72,7 +72,7 @@ function enviarMail($correo, $nombre){
         $mail->Host       = 'smtp-mail.outlook.com';                     //Nuestro servidor SMTMP smtp.gmail.com en caso de usar gmail
         $mail->SMTPAuth   = true;    
         $mail->Username   = 'rhapsodysburgers@outlook.es';             
-        $mail->Password   = 'hmqmvhzqifmwjvls';    
+        $mail->Password   = 'hrvghyjybswnfche';    
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
         //Remitente
@@ -86,7 +86,7 @@ function enviarMail($correo, $nombre){
         //Asunto
         $mail->Subject = '¡Bienvenido a Rhapsody´s Burgers!';
         //Conteido HTML
-        $mail->Body    = '<h3>¡Hola '. $nombre .', tu cuenta a sido creado correctamente!</h3><br><p>Ahora podras disfrutar de todos los servicios que ofrecemos</p>';
+        $mail->Body    = '<h3>¡Hola '. $nombre .', tu cuenta a sido creado correctamente!</h3><br><p>Ahora podras disfrutar de cada una de nuestras mejores experiencias gastronómicas del sector.</p><p>Haz tu primer pedido para empezar a disfrutar de cada sonido en cada bocado.</p>';
         //Contenido alternativo en texto simple
         $mail->AltBody = '¡Hola '. $nombre .', tu cuenta a sido creado correctamente. Ahora podras disfrutar de todos los servicios que ofrecemos';
         //Enviar correo
