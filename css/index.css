@@ -191,12 +191,12 @@ p{
 @media only screen and (min-width: 960px){
     #video-slider-frase{
         text-align: left;
+        left: 10vh;
     }
     #video-slider h2{
         font-size: 72px;
         margin: 0px;
     }
-
     .sobre-nosotros{
         flex-direction: row;
     }
