@@ -22,9 +22,9 @@
             <div id="form-contact">
                 <form action="">
                     <label for="">Nombre</label>
-                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Nombre" name="nombre">
                     <label for="">Apellidos</label>
-                    <input type="text">
+                    <input type="text" placeholder="Apellidos" name="apellidos">
                     <label for="">Local</label>
                     <select name="local">
                         <option value="Gran via" selected>Gran vía</option>
@@ -32,9 +32,10 @@
                         <option value="Aragon">Aragón</option>
                     </select>
                     <label for="">Fecha</label>
-                    <input type="date" min="<?php echo date('Y-m-d'); ?>">
+                    <input type="date" min="<?php echo date('Y-m-d'); ?>" name="fecha">
                     <label for="">Personas</label>
-                    <input type="number" max="8">
+                    <input type="number" max="8" name="numPersonas">
+                    <input type="submit" class="finalizarCompra" value="HACER RESERVA">
                 </form>
             </div>
         </div>
