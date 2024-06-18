@@ -104,7 +104,7 @@ footer{
         grid-template-rows: 1fr; 
         gap: 0px 0px; 
         grid-template-areas: ". . ."; 
-
+        align-items: start;
         justify-items: center;
     }
 }
