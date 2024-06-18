@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/contacto.css">
-    <script src="js/despliegueMenu.js" defer></script>
+    <script defer src="js/despliegueMenu.js"></script>
+    <script defer src="js/formularioContacto.js"></script>
     <title>Rhapsody's Burgers</title>
 </head>
 <body>
@@ -48,21 +49,21 @@
                             <label for="">Hora</label>
                             <select name="hora">
                                 <option value="13:00" selected>13:00</option>
-                                <option value="13:30" selected>13:30</option>
-                                <option value="14:00" selected>14:00</option>
-                                <option value="14:30" selected>14:30</option>
-                                <option value="15:00" selected>15:00</option>
-                                <option value="15:30" selected>15:30</option>
-                                <option value="16:00" selected>16:00</option>
-                                <option value="16:30" selected>16:30</option>
-                                <option value="19:00" selected>19:00</option>
-                                <option value="19:30" selected>19:30</option>
-                                <option value="20:00" selected>20:00</option>
-                                <option value="20:30" selected>20:30</option>
-                                <option value="21:00" selected>21:00</option>
-                                <option value="21:30" selected>21:30</option>
-                                <option value="22:00" selected>22:00</option>
-                                <option value="22:30" selected>22:30</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                                <option value="21:30">21:30</option>
+                                <option value="22:00">22:00</option>
+                                <option value="22:30">22:30</option>
                             </select>
                         </div>
                     </div>
