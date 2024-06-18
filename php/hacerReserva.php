@@ -21,7 +21,7 @@
     //Comprueba si existe sesion iniciada
     if (isset($_SESSION['Usu'])) {
         enviarMailCliente($correo, $nombreCliente, $nombreCompleto, $local, $fecha, $hora, $numPersonas);
-        header("Location: ../index.php");
+        header("Location: ../formulario/confirmacionSolicitud.html");
     } else {
         // No hay sesión iniciada, redirigir a la página de inicio de sesión
         header("Location: ../formulario/IniciarSesion/signIn.html");
