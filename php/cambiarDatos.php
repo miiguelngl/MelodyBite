@@ -49,7 +49,7 @@
         $stmt->execute();
         header("Location: ../miperfil.php");
     } elseif ($tipo == 4) {
-        $contrasenya = password_hash($_POST["contrasenya"], PASSWORD_DEFAULT);
+        $contrasenya = password_hash($_POST["newcontrasenya"], PASSWORD_DEFAULT);
         $consulta1 = "UPDATE `Usuario` SET `Contrasena` = ? WHERE `IdUsuario` = ?";
         $stmt = $conexion->prepare($consulta1);
         $stmt->bind_param("si", $contrasenya, $id);

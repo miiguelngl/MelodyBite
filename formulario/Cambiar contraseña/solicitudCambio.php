@@ -39,14 +39,14 @@
             $mail->isSMTP();                                           //Para usaar SMTP
             $mail->Host       = 'smtp-mail.outlook.com';                     //Nuestro servidor SMTMP smtp.gmail.com en caso de usar gmail
             $mail->SMTPAuth   = true;    
-            $mail->Username   = 'opalservice@outlook.es';             
-            $mail->Password   = 'hmqmvhzqifmwjvls';    
+            $mail->Username   = 'rhapsodysburgers@outlook.es';             
+            $mail->Password   = 'hrvghyjybswnfche';    
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
             //Remitente
-            $mail->setFrom('opalservice@outlook.es', 'Opal');
+            $mail->setFrom('rhapsodysburgers@outlook.es', 'Rhapsody´s Burgers');
             //Receptores. Podemos añadir más de uno. El segundo argumento es opcional, es el nombre
-            $mail->addAddress($correo, $nombre);     //Add a recipient
+            $mail->addAddress($correo, $nombreCliente);     //Add a recipient
             //Contenido
             //Si enviamos HTML
             $mail->isHTML(true);    
