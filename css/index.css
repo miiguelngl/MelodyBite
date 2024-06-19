@@ -22,6 +22,7 @@ p{
     font-family: var(--kanit);
     font-weight: 300;
     color: var(--letra3);
+    text-align: justify;
 }
 
 #video-slider{
@@ -109,7 +110,6 @@ p{
 .sobre-nosotros-contenido p{
     font-size: 18px;
     color: var(--tercer);
-    padding-right: 24px;
 }
 /* -- CARTA -- */
 .carta{
@@ -218,6 +218,10 @@ p{
     .sobre-nosotros-contenido h2{
         font-size: 58px;
         margin-top: 0px;
+    }
+    .sobre-nosotros-contenido p{
+        width: 80%;
+        padding-right: 24px;
     }
 
     .local{

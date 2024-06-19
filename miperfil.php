@@ -203,9 +203,13 @@
                                     echo '<input type="submit" class="cambiar" value="Cambiar" class="btnCambiar">';
                                 echo '</form>';
                                 echo '<hr>';
-                                echo '<form method="POST" action="php/cambiarDatos.php">';
-                                    echo '<label for="">Contraseña:</label>';
-                                    echo '<input type="password" name="contrasenya" value="">';
+                                echo '<form method="POST" action="php/cambiarDatos.php" id="contrasenya">';
+                                    echo '<label for="">Contraseña antigua:</label>';
+                                    echo '<input type="password" name="oldcontrasenya" value="">';
+                                    echo '<label for="">Contraseña nueva:</label>';
+                                    echo '<input type="password" name="newcontrasenya" value="">';
+                                    echo '<label for="">Confirma la contraseña:</label>';
+                                    echo '<input type="password" name="recontrasenya" value="">';
                                     echo '<input type="number" name="tipo" value="4" style="display: none;">';
                                     echo '<input type="submit" class="cambiar" value="Cambiar" class="btnCambiar">';
                                 echo '</form>';
@@ -222,5 +226,6 @@
         include './php/footer.php';
     ?>
     <script src="js/menuPerfil.js" defer></script>
+    <script src="js/comprobarCambioContrasenya.js" defer></script>
 </body>
 </html>

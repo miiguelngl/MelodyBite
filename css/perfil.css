@@ -199,6 +199,20 @@ form input[type="submit"]{
     margin-top: 12px;
 }
 
+#contrasenya{
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    margin-left: 12px;
+}
+#contrasenya label{
+    margin-left: 12px;  
+}
+#contrasenya input{
+    margin-bottom: 8px;
+}
+
+
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 }

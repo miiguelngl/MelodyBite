@@ -180,7 +180,7 @@ body{
 .contenido-principal-burger-text{
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: justify;
     width: 100%;
 }
 .contenido-principal-burger-text h2, .contenido-burger h2{
