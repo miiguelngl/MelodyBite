@@ -1,6 +1,6 @@
 # Rhapsody’s Burgers
 
-![alt text](https://github.com/miiguelngl/RhapsodyBurger/blob/tree/main/img/Logo%20Rhapsody.svg?raw=true)
+![alt text](https://github.com/miiguelngl/RhapsodyBurger/blob/main/img/Logo%20Rhapsody.svg?raw=true)
 
 ## 1. IDEA DE PROYECTO
 
