@@ -19,11 +19,14 @@
             $stmt->bind_param("ss", $estado, $id);
             $stmt->execute();
 
-            if ($estado == 1) {
+            if ($estado == 0) {
+                header("Location: ../cocina.php");
+            }elseif ($estado == 1) {
                 asignarRepartidor($id);
+                header("Location: ../cocina.php");
+            }elseif ($estado == 2) {
+                header("Location: ../miperfil.php");
             }
-
-            header("Location: ../cocina.php");
         }
     }else{
         header("Location: ../IniciarSesion/signIn.html");

@@ -92,11 +92,6 @@ if(isset($_SESSION["Usu"])){
                         echo "<td class='estado'>
                         <form action='php/cambiarPedido.php' method='post' enctype='multipart/form-data'>
                             <input type='number' id='id' name='id' class='d-none' value='".$pedido['ID_Pedido']."'>
-                            <input type='hidden' name='estado' value='0'>
-                            <input type='submit' id='enviar_admin' class='btn btn-success' value='En cocina'>
-                        </form>
-                        <form action='php/cambiarPedido.php' method='post' enctype='multipart/form-data'>
-                            <input type='number' id='id' name='id' class='d-none' value='".$pedido['ID_Pedido']."'>
                             <input type='hidden' name='estado' value='1'>
                             <input type='submit' id='enviar_cocinero' class='btn btn-success' value='En reparto'>
                         </form>
