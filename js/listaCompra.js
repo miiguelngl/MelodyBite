@@ -1,3 +1,4 @@
+let precioTotal = 0;
 function obtenerCarritoLocalStorage() {
     let carritoJSON = localStorage.getItem('carrito');
     return carritoJSON ? JSON.parse(carritoJSON) : [];
@@ -48,6 +49,7 @@ function actualizarLista() {
         tituloBurger.innerText = burger.nombre + ' - ';
         
         let precioBurger = document.createElement("span");
+        precioTotal += parseFloat(burger.precio);
         precioBurger.innerText = parseFloat(burger.precio);
         tituloBurger.appendChild(precioBurger);
         tituloBurger.innerHTML += '€';
@@ -102,6 +104,10 @@ function actualizarLista() {
         divButton.classList.add("divButton");
         divButton.appendChild(button);
         lista.appendChild(divButton);
+    }
+
+    if (urlActual.includes("checkOut")){
+        document.getElementById("precioTotal").innerText='Total: ' + precioTotal + '€';
     }
 }
 

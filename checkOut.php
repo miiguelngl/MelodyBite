@@ -58,6 +58,7 @@
                             echo '<label for="">CVV</label>';
                             echo '<input type="number" min="0" pattern="[0-9]{3}" value="" placeholder="CVV">';
                             echo '<input type="text"  value="" name="hamburguesas" style="display: none;">';
+                            echo '<label id="precioTotal"></label>';
                             echo '<input type="submit" class="finalizarCompra" value="REALIZAR PEDIDO">';
                         echo '</form>';
                     echo '</div>';
@@ -66,7 +67,7 @@
             ?>
             <div class="lista-compra">
                 <div id="lista">
-                
+
                 </div>
             </div>
         </div>
