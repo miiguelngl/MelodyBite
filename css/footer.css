@@ -21,6 +21,9 @@ footer{
     justify-content: center;
     padding: 30px 0px;
 }
+footer img{
+    padding: 18px;
+}
 .container-footer{
     
     display: flex;
@@ -55,6 +58,7 @@ footer{
     align-items: center;
     text-align: center;
     font-family: var(--kanit);
+    margin-bottom: 12px;
 }
 
 .container-grid-content h3{
@@ -63,11 +67,15 @@ footer{
     font-family: var(--kanit);
     margin: 2px;
 }
+.container-grid-content p{
+    text-align: center;
+}
 .container-grid-content a{
     font-family: var(--kanit);
     font-weight: 300;
     color: var(--tercer);
     text-decoration: none;
+    margin-top: 2px;
 }
 
 #copyright{
@@ -80,6 +88,7 @@ footer{
 #copyright p{
     color: var(--tercer);
     font-family: var(--kanit);
+    text-align: center;
 }
 
 /* -- RESPONSIVE -- */
@@ -89,7 +98,7 @@ footer{
 @media only screen and (min-width: 601px) and (max-width: 960px){
     .container-grid {
         display: grid; 
-        grid-template-columns: 2fr 1fr 1fr; 
+        grid-template-columns: 2fr 1fr 1fr 1fr; 
         grid-template-rows: 1fr; 
         gap: 0px 0px; 
         grid-template-areas: ". . ."; 
@@ -98,9 +107,12 @@ footer{
 }
 
 @media only screen and (min-width: 960px){
+    footer img{
+        padding: 0px;
+    }
     .container-grid {
         display: grid; 
-        grid-template-columns: 2fr 1fr 1fr; 
+        grid-template-columns: 2fr 1fr 1fr 1fr; 
         grid-template-rows: 1fr; 
         gap: 0px 0px; 
         grid-template-areas: ". . ."; 

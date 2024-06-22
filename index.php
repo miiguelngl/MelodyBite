@@ -54,7 +54,7 @@
                     </p>
                 </div>
                 <div id="local-img">
-                    <img src="img/local hamburguesas.png" alt="">
+                    <img src="img/local hamburguesas.png" alt="Local Rhapsody's Burger">
                 </div>
             </div>
         </div>

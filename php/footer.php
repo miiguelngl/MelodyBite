@@ -12,8 +12,14 @@
                 </div>
                 <div class="container-grid-content">
                     <h3>Legal</h3>
-                    <a href="">Protección de datos</a><br>
+                    <a href="">Protección de datos</a>
                     <a href="">Terminos y condiciones</a>
+                </div>
+                <div class="container-grid-content">
+                    <h3>Menu</h3>
+                    <a href="index.php">Home</a>
+                    <a href="carta.php">Carta</a>
+                    <a href="contacto.php">Contacto</a>
                 </div>
             </div>
             <div id="copyright">
