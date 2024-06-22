@@ -130,7 +130,25 @@
 
                                             echo "<h5>Estado del pedido: <br><span>En reparto</span><br><br>Repartidor: " . $datosRepartidor['Nombre'] . "</h5><hr>";
                                         }else{
-                                            echo '<h5>Estado del pedido: <br><span>Entregado</span></h5><hr>';
+                                            $consultaRep = "SELECT * FROM `Repartidores` WHERE `ID_Repartidor` = ?";
+
+                                            $stmt3 = $conexion->prepare($consultaRep);
+                                            $stmt3->bind_param("i", $pedido['ID_Repartidor']);
+                                            $stmt3->execute();
+
+                                            $resultado3 = $stmt3->get_result();
+                                            $repartidor = $resultado3->fetch_assoc();
+
+                                            $consultaNombreRep = "SELECT * FROM `Usuario` WHERE `IdUsuario` =  ?";
+
+                                            $stmt4 = $conexion->prepare($consultaNombreRep);
+                                            $stmt4->bind_param("i", $repartidor['ID_Usuario']);
+                                            $stmt4->execute();
+
+                                            $resultado4 = $stmt4->get_result();
+                                            $datosRepartidor = $resultado4->fetch_assoc();
+
+                                            echo "<h5>Estado del pedido: <br><span>Entregado</span><br><br>Repartidor que lo ha entregado: " . $datosRepartidor['Nombre'] . "</h5><hr>";
                                         }
                                         echo '</div>';
                                     }
