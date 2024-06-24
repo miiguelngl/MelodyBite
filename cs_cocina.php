@@ -26,7 +26,7 @@ include './php/header.php';
 if(isset($_SESSION["Usu"])){
     $idUsu = $_SESSION["Usu"];
     //Comprobar que la sesion iniciada sea Admin
-    $consulta1 = "SELECT * FROM `Usuario` WHERE `Apodo` =  ?";
+    $consulta1 = "SELECT * FROM `usuario` WHERE `Apodo` =  ?";
     
     $stmt = $conexion->prepare($consulta1);
     $stmt->bind_param("s", $idUsu);
@@ -41,7 +41,7 @@ if(isset($_SESSION["Usu"])){
 
             //MOSTRAR TODOS LOS USUARIO NO VALIDADAS
 
-            $consulta2 = "SELECT * FROM `Pedidos`";
+            $consulta2 = "SELECT * FROM `pedidos`";
 
             $stmt2 = $conexion->prepare($consulta2);
             $stmt2->execute();
@@ -56,7 +56,7 @@ if(isset($_SESSION["Usu"])){
                     if($pedido['ID_Repartidor'] == NULL || $pedido['ID_Repartidor'] == ""){
                         echo "<td>Repartidor no asignado</td>";
                     }else{
-                        $consultaRep = "SELECT * FROM `Repartidores` WHERE `ID_Repartidor` = ?";
+                        $consultaRep = "SELECT * FROM `repartidores` WHERE `ID_Repartidor` = ?";
 
                         $stmt3 = $conexion->prepare($consultaRep);
                         $stmt3->bind_param("i", $pedido['ID_Repartidor']);
@@ -65,7 +65,7 @@ if(isset($_SESSION["Usu"])){
                         $resultado3 = $stmt3->get_result();
                         $repartidor = $resultado3->fetch_assoc();
 
-                        $consultaNombreRep = "SELECT * FROM `Usuario` WHERE `IdUsuario` =  ?";
+                        $consultaNombreRep = "SELECT * FROM `usuario` WHERE `IdUsuario` =  ?";
 
                         $stmt4 = $conexion->prepare($consultaNombreRep);
                         $stmt4->bind_param("i", $repartidor['ID_Usuario']);

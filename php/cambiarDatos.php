@@ -19,7 +19,7 @@
     $tipo = $_POST["tipo"];
     
     // Consulta para obtener el ID del usuario
-    $consulta = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
+    $consulta = "SELECT * FROM `usuario` WHERE `Apodo` = ?";
     $stmt = $conexion->prepare($consulta);
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -29,28 +29,28 @@
     
     if ($tipo == 1) {
         $nombre = $_POST["nombre"];
-        $consulta1 = "UPDATE `Usuario` SET `Nombre` = ? WHERE `IdUsuario` = ?";
+        $consulta1 = "UPDATE `usuario` SET `Nombre` = ? WHERE `IdUsuario` = ?";
         $stmt = $conexion->prepare($consulta1);
         $stmt->bind_param("si", $nombre, $id);
         $stmt->execute();
         header("Location: ../miperfil.php");
     } elseif ($tipo == 2) {
         $apellido = $_POST["apellido"];
-        $consulta1 = "UPDATE `Usuario` SET `Apellidos` = ? WHERE `IdUsuario` = ?";
+        $consulta1 = "UPDATE `usuario` SET `Apellidos` = ? WHERE `IdUsuario` = ?";
         $stmt = $conexion->prepare($consulta1);
         $stmt->bind_param("si", $apellido, $id);
         $stmt->execute();
         header("Location: ../miperfil.php");
     } elseif ($tipo == 3) {
         $direccion = $_POST["direccion"];
-        $consulta1 = "UPDATE `Usuario` SET `Direccion` = ? WHERE `IdUsuario` = ?";
+        $consulta1 = "UPDATE `usuario` SET `Direccion` = ? WHERE `IdUsuario` = ?";
         $stmt = $conexion->prepare($consulta1);
         $stmt->bind_param("si", $direccion, $id);
         $stmt->execute();
         header("Location: ../miperfil.php");
     } elseif ($tipo == 4) {
         $contrasenya = password_hash($_POST["newcontrasenya"], PASSWORD_DEFAULT);
-        $consulta1 = "UPDATE `Usuario` SET `Contrasena` = ? WHERE `IdUsuario` = ?";
+        $consulta1 = "UPDATE `usuario` SET `Contrasena` = ? WHERE `IdUsuario` = ?";
         $stmt = $conexion->prepare($consulta1);
         $stmt->bind_param("si", $contrasenya, $id);
         $stmt->execute();

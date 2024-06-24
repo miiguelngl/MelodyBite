@@ -24,7 +24,7 @@ include './php/header.php';
 if(isset($_SESSION["Usu"])){
     $idUsu = $_SESSION["Usu"];
     //Comprobar que la sesion iniciada sea Admin
-    $consulta1 = "SELECT * FROM `Usuario` WHERE `Apodo` =  ?";
+    $consulta1 = "SELECT * FROM `usuario` WHERE `Apodo` =  ?";
     
     $stmt = $conexion->prepare($consulta1);
     $stmt->bind_param("s", $idUsu);
@@ -39,7 +39,7 @@ if(isset($_SESSION["Usu"])){
 
             //MOSTRAR TODOS LOS USUARIO NO VALIDADAS
 
-            $consulta2 = "SELECT * FROM `Usuario`";
+            $consulta2 = "SELECT * FROM `usuario`";
 
             $stmt2 = $conexion->prepare($consulta2);
             $stmt2->execute();

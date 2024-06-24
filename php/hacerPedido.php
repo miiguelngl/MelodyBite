@@ -23,7 +23,7 @@
         $us = $_SESSION['Usu'];
     
         // Consulta para obtener el IdUsuario
-        $consulta1 = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
+        $consulta1 = "SELECT * FROM `usuario` WHERE `Apodo` = ?";
         $stmt = $conexion->prepare($consulta1);
         $stmt->bind_param("s", $us);
         $stmt->execute();
@@ -34,7 +34,7 @@
             $idUsuario = $fila['IdUsuario'];
     
             // Preparar la inserción del pedido
-            $subida = "INSERT INTO `Pedidos` (ID_Usuario, Nombre_Cliente, Pedido, Direccion, Estado) VALUES (?, ?, ?, ?, 0)";
+            $subida = "INSERT INTO `pedidos` (ID_Usuario, Nombre_Cliente, Pedido, Direccion, Estado) VALUES (?, ?, ?, ?, 0)";
             $stmt = $conexion->prepare($subida);
             $stmt->bind_param("isss", $idUsuario, $nombreCliente, $burgers, $direccionEnt);
             $stmt->execute();
@@ -46,7 +46,7 @@
             header("Location: ../formulario/confirmacionPedido.html");
             exit();
         } else {
-            // Usuario no encontrado, redirigir a la página de inicio de sesión
+            // usuario no encontrado, redirigir a la página de inicio de sesión
             header("Location: ../IniciarSesion/signIn.html");
             exit();
         }

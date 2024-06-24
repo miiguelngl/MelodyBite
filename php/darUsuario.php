@@ -14,7 +14,7 @@
         $Us = $_SESSION['Usu'];
 
         if($conexion) {
-            $consulta1 = "UPDATE `Usuario` SET `Tipo_usuario` = ? WHERE `Usuario`.`IdUsuario` = ?;";
+            $consulta1 = "UPDATE `usuario` SET `Tipo_usuario` = ? WHERE `usuario`.`IdUsuario` = ?;";
             $stmt = $conexion->prepare($consulta1);
             $stmt->bind_param("ss", $tipo_usuario, $id);
             $stmt->execute();

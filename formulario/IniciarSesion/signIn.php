@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     
     //Comprobaciones antes de enviar datos
     //Comprueba que exista un USUARIO con el APODO o EMAIL introducido y que tenga la CONTRASEÑA introducida;
-    $comprobacion = "SELECT * FROM `Usuario` WHERE `Apodo` = ? OR `Correo` = ?";
+    $comprobacion = "SELECT * FROM `usuario` WHERE `Apodo` = ? OR `Correo` = ?";
     $stmt = $conexion->prepare($comprobacion);
     $stmt->bind_param("ss", $usuario, $usuario);
     $stmt->execute();

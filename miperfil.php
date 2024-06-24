@@ -37,7 +37,7 @@
                             header("Location: index.php");
                         }
                         $username = $_SESSION['Usu'];
-                        $consulta = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
+                        $consulta = "SELECT * FROM `usuario` WHERE `Apodo` = ?";
 
                         $stmt = $conexion->prepare($consulta);
                         $stmt->bind_param("s", $username);
@@ -97,7 +97,7 @@
                         <div class="info-perfil-overflow">
                             <?php
                                 if ($usuario['Tipo_usuario'] != 3) {
-                                    $consulta2 = "SELECT * FROM `Pedidos` WHERE `ID_Usuario` = ?";
+                                    $consulta2 = "SELECT * FROM `pedidos` WHERE `ID_Usuario` = ?";
 
                                     $stmt = $conexion->prepare($consulta2);
                                     $stmt->bind_param("s", $usuario['IdUsuario']);
@@ -110,7 +110,7 @@
                                         if ($pedido['Estado'] == 0) {
                                             echo '<h5>Estado del pedido: <br><span>Oido cocina - En preparación</span></h5><hr>';
                                         }else if($pedido['Estado'] == 1){
-                                            $consultaRep = "SELECT * FROM `Repartidores` WHERE `ID_Repartidor` = ?";
+                                            $consultaRep = "SELECT * FROM `repartidores` WHERE `ID_Repartidor` = ?";
 
                                             $stmt3 = $conexion->prepare($consultaRep);
                                             $stmt3->bind_param("i", $pedido['ID_Repartidor']);
@@ -119,7 +119,7 @@
                                             $resultado3 = $stmt3->get_result();
                                             $repartidor = $resultado3->fetch_assoc();
 
-                                            $consultaNombreRep = "SELECT * FROM `Usuario` WHERE `IdUsuario` =  ?";
+                                            $consultaNombreRep = "SELECT * FROM `usuario` WHERE `IdUsuario` =  ?";
 
                                             $stmt4 = $conexion->prepare($consultaNombreRep);
                                             $stmt4->bind_param("i", $repartidor['ID_Usuario']);
@@ -130,7 +130,7 @@
 
                                             echo "<h5>Estado del pedido: <br><span>En reparto</span><br><br>Repartidor: " . $datosRepartidor['Nombre'] . "</h5><hr>";
                                         }else{
-                                            $consultaRep = "SELECT * FROM `Repartidores` WHERE `ID_Repartidor` = ?";
+                                            $consultaRep = "SELECT * FROM `repartidores` WHERE `ID_Repartidor` = ?";
 
                                             $stmt3 = $conexion->prepare($consultaRep);
                                             $stmt3->bind_param("i", $pedido['ID_Repartidor']);
@@ -139,7 +139,7 @@
                                             $resultado3 = $stmt3->get_result();
                                             $repartidor = $resultado3->fetch_assoc();
 
-                                            $consultaNombreRep = "SELECT * FROM `Usuario` WHERE `IdUsuario` =  ?";
+                                            $consultaNombreRep = "SELECT * FROM `usuario` WHERE `IdUsuario` =  ?";
 
                                             $stmt4 = $conexion->prepare($consultaNombreRep);
                                             $stmt4->bind_param("i", $repartidor['ID_Usuario']);
@@ -154,7 +154,7 @@
                                     }
                                 }else{
                                     // Suponiendo que ya tienes la conexión a la base de datos en $conexion
-                                    $consulta2 = "SELECT * FROM `Repartidores` WHERE `ID_Usuario` = ?";
+                                    $consulta2 = "SELECT * FROM `repartidores` WHERE `ID_Usuario` = ?";
 
                                     $stmt = $conexion->prepare($consulta2);
                                     $stmt->bind_param("i", $usuario['IdUsuario']);
@@ -164,7 +164,7 @@
                                     $repartidor = $resultado2->fetch_assoc();
 
                                     if ($repartidor) {
-                                        $consulta3 = "SELECT * FROM `Pedidos` WHERE `ID_Repartidor` = ?";
+                                        $consulta3 = "SELECT * FROM `pedidos` WHERE `ID_Repartidor` = ?";
 
                                         $stmt2 = $conexion->prepare($consulta3);
                                         $stmt2->bind_param("i", $repartidor['ID_Repartidor']); // Cambié 's' a 'i' porque ID_Repartidor parece ser un entero

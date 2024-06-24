@@ -118,7 +118,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`IdUsuario`, `Apodo`, `Nombre`, `Apellidos`, `Direccion`, `Correo`, `Contrasena`, `Tipo_usuario`) VALUES
 (1, 'miguelngl', 'Miguel Ángel', 'García Pérez', 'C/ Juan Fabregat 9', '04mangel@gmail.com', '$2y$10$QUwszQj4GVYO70TnlgX66uZqcLz6SNINYbdmfdIhWiriXseFAHOba', 1),
-(2, 'pablitoUsuario', 'Pablo', 'El Usuario', '', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', 0),
+(2, 'pablitoUsuario', 'Pablo', 'El usuario', '', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', 0),
 (3, 'pabloCocinero', 'Pablo', 'Cocinero', '', 'pablococinero@gmail.com', '$2y$10$da0gDXv9DnLgQxW6MGThnOBMCjpmtzBxOeUXtF4optzlIwdhywABS', 2),
 (4, 'davidRepartidor', 'David', 'Orts', 'Calle Manolo Lama', 'davorts@gmail.com', '$2y$10$ODbM631rcn4OZFGyRoh4q.EBfmkr3VsgTYr4Xf8z4lDs6LzqjOLvG', 3),
 (5, 'pabloRepartidor', 'Pablo', 'El Repartidor', 'C/ Machado Mil', 'pabloRepartidor@gmail.com', '$2y$10$XTrjAHFCK17UF0dQvtqznO99AO4hoqDsVgLh7NqkIYZSRvpwQ329K', 3),

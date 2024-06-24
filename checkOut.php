@@ -23,7 +23,7 @@
                 include 'php/conexion.php';
                 if (isset($_SESSION['Usu'])) {
                     $username = $_SESSION['Usu'];
-                    $consulta = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
+                    $consulta = "SELECT * FROM `usuario` WHERE `Apodo` = ?";
 
                     $stmt = $conexion->prepare($consulta);
                     $stmt->bind_param("s", $username);

@@ -21,11 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     //Comprobaciones antes de enviar datos
     //Comprueba que el USERNAME no exista en la BBDD;
-    $comprobacionUsu = "SELECT * FROM `Usuario` WHERE `Apodo` = '$usuario'";
+    $comprobacionUsu = "SELECT * FROM `usuario` WHERE `Apodo` = '$usuario'";
     $resultadoUsu = $conexion->query($comprobacionUsu);
     
     //Comprueba que el CORREO no exista en la BBDD;
-    $comprobacionEmail = "SELECT * FROM `Usuario` WHERE `Correo` = '$email'";
+    $comprobacionEmail = "SELECT * FROM `usuario` WHERE `Correo` = '$email'";
     $resultadoEmail = $conexion->query($comprobacionEmail);
 
     if ($conexion->connect_error) {
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         echo "El correo electrónico de usuario ya está en uso";
     }else{
 
-        $consulta = "INSERT INTO `Usuario` (Apodo, Nombre, Apellidos, Correo, Direccion, Contrasena, Tipo_usuario) VALUES ('$usuario', '$nombre', '$apellidos', '$email', '$direccion', '$contrasena', 0)";
+        $consulta = "INSERT INTO `usuario` (Apodo, Nombre, Apellidos, Correo, Direccion, Contrasena, Tipo_usuario) VALUES ('$usuario', '$nombre', '$apellidos', '$email', '$direccion', '$contrasena', 0)";
         if ($conexion->query($consulta) === TRUE) {
             echo "Datos insertados correctamente";
             $_SESSION["Usu"] = $usuario;
