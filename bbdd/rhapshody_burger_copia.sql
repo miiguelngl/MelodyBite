@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-06-2024 a las 12:02:12
+-- Tiempo de generación: 12-06-2024 a las 21:51:26
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -20,8 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `rhapshody_burger`
 --
-CREATE DATABASE IF NOT EXISTS `rhapshody_burger` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `rhapshody_burger`;
+
 -- --------------------------------------------------------
 
 --
@@ -70,11 +69,10 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`ID_Pedido`, `ID_Usuario`, `Nombre_Cliente`, `Pedido`, `Direccion`, `Estado`, `ID_Repartidor`) VALUES
-(1, 1, 'Miguel Ángel', 'La Rockera - {EXTRAS: Extra de salsa, Extra de queso, Que chorree [Extra salsa + Doble queso]}, The Classical - {EXTRAS: }, Hip-Hop Style - {EXTRAS: Extra de salsa, Extra de queso}', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 2, 3),
-(2, 1, 'Miguel Ángel', 'La Rockera - {EXTRAS: }, La Rockera - {EXTRAS: Extra de salsa, Extra de queso}, La Rockera - {EXTRAS: }', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 1, 1),
+(1, 1, 'Miguel Ángel', 'La Rockera - {EXTRAS: Extra de salsa, Extra de queso, Que chorree [Extra salsa + Doble queso]}, The Classical - {EXTRAS: }, Hip-Hop Style - {EXTRAS: Extra de salsa, Extra de queso}', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 1, 1),
+(2, 1, 'Miguel Ángel', 'La Rockera - {EXTRAS: }, La Rockera - {EXTRAS: Extra de salsa, Extra de queso}, La Rockera - {EXTRAS: }', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 1, NULL),
 (3, 1, 'Miguel Ángel', 'Funky Burger - {EXTRAS: Extra de salsa, Que chorree [Extra salsa + Doble queso]}, La Rockera - {EXTRAS: Extra de queso}', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 0, NULL),
-(4, 1, 'Miguel Ángel', 'La Rockera - {EXTRAS: Extra de salsa}, La Rockera - {EXTRAS: Que chorree [Extra salsa + Doble queso]}', 'C/ Juan Fabregat 9, Piso: , Puerta: ', 2, 3),
-(5, 1, 'Miguel Ángel', 'La Rockera - {EXTRAS: Extra de queso, Que chorree [Extra salsa + Doble queso]}, Funky Burger - {EXTRAS: }', 'C/ Juan Fabregat 9, Piso: 5, Puerta: 12', 0, NULL);
+(4, 1, 'Miguel Ángel', 'La Rockera - {EXTRAS: Extra de salsa}, La Rockera - {EXTRAS: Que chorree [Extra salsa + Doble queso]}', 'C/ Juan Fabregat 9, Piso: , Puerta: ', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -117,12 +115,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`IdUsuario`, `Apodo`, `Nombre`, `Apellidos`, `Direccion`, `Correo`, `Contrasena`, `Tipo_usuario`) VALUES
-(1, 'miguelngl', 'Miguel Ángel', 'García Pérez', 'C/ Juan Fabregat 9', '04mangel@gmail.com', '$2y$10$QUwszQj4GVYO70TnlgX66uZqcLz6SNINYbdmfdIhWiriXseFAHOba', 1),
-(2, 'pablitoUsuario', 'Pablo', 'El Usuario', '', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', 0),
+(1, 'miguelngl', 'Miguel Ángel', 'García Pérez', 'C/ Juan Fabregat 9', 'prueba@gmail.com', '$2y$10$Up80ieTlU3quu9t9K6AReOEcINU/x0ZqI4mCix/guYNacOFDLqtVG', 1),
+(2, 'pablitoElMotos', 'Pablo', 'El Motorista', '', 'pablito@gmail.com', '$2y$10$kN/VCmz8UFqfER4eHjajveMGuqETQG3/4AE4zkGBeR4zc5t0leqwC', 0),
 (3, 'pabloCocinero', 'Pablo', 'Cocinero', '', 'pablococinero@gmail.com', '$2y$10$da0gDXv9DnLgQxW6MGThnOBMCjpmtzBxOeUXtF4optzlIwdhywABS', 2),
-(4, 'davidRepartidor', 'David', 'Orts', 'Calle Manolo Lama', 'davorts@gmail.com', '$2y$10$ODbM631rcn4OZFGyRoh4q.EBfmkr3VsgTYr4Xf8z4lDs6LzqjOLvG', 3),
-(5, 'pabloRepartidor', 'Pablo', 'El Repartidor', 'C/ Machado Mil', 'pabloRepartidor@gmail.com', '$2y$10$XTrjAHFCK17UF0dQvtqznO99AO4hoqDsVgLh7NqkIYZSRvpwQ329K', 3),
-(6, 'miguelMemoria', 'Miguel', 'Ángel', 'C/ Manolo Lama', 'kayrusn1n3@gmail.com', '$2y$10$PLe7lcpK8fUuFBFn/jT8I.8t.Np2JeswdAcRNiOPQA0GR05t6e3L.', 0);
+(4, 'rafeta', 'Rafa', 'Aaaaa', 'Tu madre', 'rafeta@gmail.com', '$2y$10$ODbM631rcn4OZFGyRoh4q.EBfmkr3VsgTYr4Xf8z4lDs6LzqjOLvG', 0),
+(5, 'pabloRepartidor', 'Pablo', 'El Repartidor', 'C/ Machado Mil', '04mangel@gmail.com', '$2y$10$XTrjAHFCK17UF0dQvtqznO99AO4hoqDsVgLh7NqkIYZSRvpwQ329K', 3);
 
 --
 -- Índices para tablas volcadas
@@ -169,7 +166,7 @@ ALTER TABLE `hamburguesas`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `ID_Pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_Pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `repartidores`
@@ -181,7 +178,7 @@ ALTER TABLE `repartidores`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
